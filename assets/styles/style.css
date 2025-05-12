@@ -122,6 +122,35 @@ iframe {
   border-radius: 4px;
 }
 
+  .search-box {
+      margin-bottom: 20px;
+    }
+    .search-box input,
+    .search-box select {
+      width: 300px;
+      padding: 8px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+    .result-item {
+      margin: 10px 0;
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+    }
+    .result-item a {
+      font-size: 18px;
+      text-decoration: none;
+      color: var(--foreground);
+    }
+    .result-item a:hover {
+      text-decoration: underline;
+    }
+    .result-description {
+      font-size: 14px;
+      color: #555;
+      margin-top: 5px;
+    }
+
 /* Media Query */
 
 @media (hover: hover) {
