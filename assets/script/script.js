@@ -174,3 +174,65 @@ function topFunction() {
 if (!customElements.get('views-blog')) {
   customElements.define('views-blog', ViewsBlog);
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Select the <nav-bar> element
+  const navBarEl = document.querySelector("nav-bar");
+
+  // Define your HTML snippet as a template string
+  const headerHTML = `
+    <header class="container__">
+      <h1 class="__header-title">
+        <a href="/index.html">Danny's Blog</a>
+      </h1>
+      <nav class="__header-nav">
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/assets/html/about.html">About</a></li>
+          <li><a href="/assets/html/posts.html">Posts</a></li>
+          <li>
+            <a href="https://danielmorrisey.start.page">
+              <i class="fa-brands fa-buffer"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/therealfuntimeswithdanny">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://bsky.app/profile/madebydanny.uk">
+              <i class="fa-brands fa-bluesky"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  `;
+
+  // If the <nav-bar> element exists, inject the HTML into it
+  if (navBarEl) {
+    navBarEl.innerHTML = headerHTML;
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Select the <nav-bar> element
+  const navBarEl = document.querySelector("footer-bar");
+
+  // Define your HTML snippet as a template string
+  const headerHTML = `
+		<div id="notice">
+			Design by: <a href="https://github.com/westtle/simple-blog-template" target="_blank">westtle on Github</a>
+		</div>
+	</main>
+	<footer>
+		<p class="__footer-copyright">&copy; 2025-2029 Made by Danny, <i>A Funtimes Media Company</i></p>
+	</footer>
+  `;
+
+  // If the <nav-bar> element exists, inject the HTML into it
+  if (navBarEl) {
+    navBarEl.innerHTML = headerHTML;
+  }
+});
