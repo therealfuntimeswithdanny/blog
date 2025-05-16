@@ -229,6 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	<footer>
 		<p class="__footer-copyright">&copy; 2025-2029 Made by Danny, <i>A Funtimes Media Company</i></p>
 	</footer>
+  <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa-solid fa-arrow-up fa-bounce"></i></button>
   `;
 
   // If the <nav-bar> element exists, inject the HTML into it

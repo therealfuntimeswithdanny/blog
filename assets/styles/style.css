@@ -74,7 +74,7 @@ header a {
 
 footer {
 	color: black;
-	background: white
+	background: white;
 	padding: 1em calc(var(--twelve) * 2);
 	margin-block-start: 2.5rem;
 	text-align: center;
@@ -186,7 +186,7 @@ iframe {
 }
 
 .dark-mode i {
-    color: #fff;
+    color: black;
 }
 
 .dark-mode #notice {
