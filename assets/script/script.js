@@ -227,7 +227,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		</div>
 	</main>
 	<footer>
-		<p class="__footer-copyright">&copy; 2025-2029 Made by Danny, <i>A Funtimes Media Company</i></p>
+		<p class="__footer-copyright">&copy; 2025-2029 Made by Danny, <i>A Funtimes Media Company</i> | <a href="https://status.madebydanny.uk" target="_blank">Status</a></p>
 	</footer>
   <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa-solid fa-arrow-up fa-bounce"></i></button>
   `;
