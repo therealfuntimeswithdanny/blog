@@ -227,14 +227,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Define your HTML snippet as a template string
   const headerHTML = `
+  <head>
+      <link rel="stylesheet" type="text/css" href="./styles/style.css">
+  </head>
 		<div id="notice">
 			Design by: <a href="https://github.com/westtle/simple-blog-template" target="_blank">westtle on Github</a>
 		</div>
-	</main>
-	<footer>
-		<p class="__footer-copyright"> &copy; 2025-2029 Made by Danny, <i>A Funtimes Media Company</i> | <a href="https://status.madebydanny.uk">System Status</a></p>
+		<footer-copyright>
+    <p class="__footer-copyright"> &copy; 2025-2029 Made by Danny, <i>A Funtimes Media Company</i> | <a href="https://status.madebydanny.uk">System Status</a></p>
     <p class="__footer-copyright"> <a><i class="fa-brands fa-buffer"></i></a> / <a><i class="fa-brands fa-bluesky"></i></a> / <a><i class="fa-brands fa-github"></i></a> / <a><i class="fa-brands fa-reddit"></i></a></p>
-	</footer>
+    </footer-copyright>
   <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa-solid fa-arrow-up fa-bounce"></i></button>
   `;
 
