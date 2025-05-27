@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Define your HTML snippet as a template string
   const headerHTML = `
-<p>Version 10.0 Stable, <a href="https://archived-from-version-9-blog.madebydanny.uk">Switch to Version 9.0 (Archived) </a></p>
+<p>Version 10.1 Stable, <a href="https://a8591e7f.blog-bg3.pages.dev/">Switch to Version 9.0 (Archived) </a></p>
   `;
 
   // If the <nav-bar> element exists, inject the HTML into it
