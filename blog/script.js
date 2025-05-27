@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
   </div>
   <!-- About Card -->
   <div class="w3-card w3-margin w3-margin-top">
-  <img src="" style="width:100%">
+  <img src="img/oreo.jpg" style="width:100%">
     <div class="w3-container w3-white">
       <h4><b>Oreo, <i class="fa-regular fa-hand-peace"></i></b></h4>
       <p>My Cat <i class="fa-regular fa-hand-point-down"></i><br><a href="/oreo.html">Learn More</a></p>
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <footer class="w3-container w3-red w3-padding-32 w3-margin-top">
   <button class="w3-button w3-white w3-padding-large w3-margin-bottom"><i class="fa-regular fa-hand-point-left"></i> <a href="index.html">Home</a></button>
   <p>&copy; 2024-2029 Made by Danny UK, <i>A <a href="https://corp.madebydanny.uk">Funtimes Media</a> Company </i>/ Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a><br>
-  Built with <i class="fa-regular fa-heart"></i> & <i class="fa-regular fa-hand-peace"></i> by <a href="https://madebydanny.uk">Daniel Morrisey</a>, Secured by <a href="https://www.cloudflare.com/case-studies/">Cloudflare</a> / <a href="https://status.madebydanny.uk">Site Status</a> / <a href="tos.html">TOS</a><br>Get updates, news, announcements and more on <a href="https://bsky.app/profile/madebydanny.uk">our Bluesky</a> and our <a href="https://madebydanny.uk/startpage">Start Page</a></p>
+  Built with <i class="fa-regular fa-heart"></i> & <i class="fa-regular fa-hand-peace"></i> by <a href="https://madebydanny.uk">Daniel Morrisey</a>, Secured by <a href="https://www.cloudflare.com/case-studies/">Cloudflare</a> / <a href="https://status.madebydanny.uk">Site Status</a> / <a href="/tos.html">TOS</a><br>Get updates, news, announcements and more on <a href="https://bsky.app/profile/madebydanny.uk">our Bluesky</a> and our <a href="https://madebydanny.uk/startpage">Start Page</a></p>
   <info></info>
 </footer>
   `;
@@ -117,22 +117,6 @@ document.addEventListener("DOMContentLoaded", () => {
     navBarEl.innerHTML = headerHTML;
   }
 });
-
-document.addEventListener("DOMContentLoaded", () => {
-  // Select the <nav-bar> element
-  const navBarEl = document.querySelector("info");
-
-  // Define your HTML snippet as a template string
-  const headerHTML = `
-<p>Version 10.0 Stable, <a href="https://archived-from-version-9-blog.madebydanny.uk">Switch to Version 9.0 (Archived) </a></p>
-  `;
-
-  // If the <nav-bar> element exists, inject the HTML into it
-  if (navBarEl) {
-    navBarEl.innerHTML = headerHTML;
-  }
-});
-
 
 document.addEventListener("DOMContentLoaded", () => {
   // Select the <nav-bar> element
