@@ -192,7 +192,32 @@ document.addEventListener("DOMContentLoaded", () => {
       <p>Hi I'm Danny Morrisey A self taught Front End Web Developer, OG Raft player since 2022 & Head of Development @ Funtimes Media <i class="fa-regular fa-hand-point-down"></i><br><a href="https://corp.madebydanny.uk">Funtimes Media - Company Website</a></p>
     </div>
   </div><hr>
-  
+
+  <!-- Posts -->
+  <div class="w3-card w3-margin">
+    <div class="w3-container w3-padding">
+      <h4><i class="fa-regular fa-clock"></i> Newest Posts</h4>
+    </div>
+    <ul class="w3-ul w3-hoverable w3-white">
+      <li class="w3-padding-16">
+        <img src="img/bluesky-brands.svg" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">How to Bluesky</span><br>
+        <span><i class="fa-regular fa-hand-point-right"></i> <a href="how-to-bluesky.html">Read More</a></span>
+      </li> 
+      <li class="w3-padding-16">
+        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT2CmLBr7ObpwYH1ii9yYseVqGLDyFMzTbcTGUZ36vnhq3HgSB-E74D9cRe7YO0MsLKwXnu" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Raft</span><br>
+        <span><i class="fa-regular fa-hand-point-right"></i> <a href="raft.html">Read More</a></span>
+      </li>   
+      <li class="w3-padding-16">
+        <img src="img/apple-brands-solid.svg" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">The iPhone 14, Three Years later</span><br>
+        <span><i class="fa-regular fa-hand-point-right"></i> <a href="iphone-14.html">Read More</a></span>
+      </li> 
+    </ul>
+  </div>
+  <hr> 
+
   <!-- Posts -->
   <div class="w3-card w3-margin">
     <div class="w3-container w3-padding">
