@@ -87,6 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
   <!-- Footer -->
 <footer class="w3-container w3-red w3-padding-32 w3-margin-top">
   <button class="w3-button w3-white w3-padding-large w3-margin-bottom"><i class="fa-regular fa-hand-point-left"></i> <a href="index.html">Home</a></button>
+  <button class="w3-button w3-white w3-padding-large w3-margin-bottom"><i class="fa-regular fa-hand-point-up"></i> <a href="#">Top</a></button>
   <p>&copy; 2024-2029 Made by Danny UK, <i>A <a href="https://corp.madebydanny.uk">Funtimes Media</a> Company </i>/ Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a><br>
   Built with <i class="fa-regular fa-heart"></i> & <i class="fa-regular fa-hand-peace"></i> by <a href="https://madebydanny.uk">Daniel Morrisey</a>, Secured by <a href="https://www.cloudflare.com/case-studies/">Cloudflare</a> / <a href="https://status.madebydanny.uk">Site Status</a> / <a href="/tos.html">TOS</a><br>Get updates, news, announcements and more on <a href="https://bsky.app/profile/madebydanny.uk">our Bluesky</a><br>
   <a href="/rss"><i class="fa-solid fa-rss"></i></a> / <a href="/startpage"><i class="fa-brands fa-buffer"></i></a> / <a href="https://bsky.app/profile/madebydanny.uk"><i class="fa-brands fa-bluesky"></i></a> / <a href="https://github.com/therealfuntimeswithdanny"><i class="fa-brands fa-github"></i></a></p>
@@ -162,6 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
      <!-- Footer -->
 <footer class="w3-container w3-red w3-padding-32 w3-margin-top">
   <button class="w3-button w3-white w3-disabled w3-padding-large w3-margin-bottom"><i class="fa-regular fa-hand-point-left"></i> Previous</button>
+  <button class="w3-button w3-white w3-padding-large w3-margin-bottom"><i class="fa-regular fa-hand-point-up"></i> <a href="#">Top</a></button>
   <button class="w3-button w3-white w3-padding-large w3-margin-bottom"><a href="page/2.html">Next</a> <i class="fa-regular fa-hand-point-right"></i></button>
   <p>&copy; 2024-2029 Made by Danny UK, <i>A <a href="https://corp.madebydanny.uk">Funtimes Media</a> Company </i>/ Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a><br>
   Built with <i class="fa-regular fa-heart"></i> & <i class="fa-regular fa-hand-peace"></i> by <a href="https://madebydanny.uk">Daniel Morrisey</a>, Secured by <a href="https://www.cloudflare.com/case-studies/">Cloudflare</a> / <a href="https://status.madebydanny.uk">Site Status</a> / <a href="/tos.html">TOS</a><br>Get updates, news, announcements and more on <a href="https://bsky.app/profile/madebydanny.uk">our Bluesky</a><br>
@@ -261,7 +263,6 @@ document.addEventListener("DOMContentLoaded", () => {
   <img src="img/oreo.jpeg" style="width:100%">
     <div class="w3-container w3-white">
       <h4><b>Oreo, <i class="fa-regular fa-hand-peace"></i></b></h4>
-      <p>My Cat <i class="fa-regular fa-hand-point-down"></i><br><a href="/oreo.html">Learn More</a></p>
     </div>
    </div>
     <!-- Posts -->
