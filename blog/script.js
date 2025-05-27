@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <li class="w3-padding-16">
         <img src="img/buffer-brands.svg" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
         <span class="w3-large">16 Weeks of Buffer!</span><br>
-        <span><i class="fa-regular fa-hand-point-right"></i> <a href="#">View Post</a></span>
+        <span><i class="fa-regular fa-hand-point-right"></i> <a href="https://bsky.app/profile/madebydanny.uk/post/3lq3nxzj57222">View Post</a></span>
       </li>
       <li class="w3-padding-16">
         <img src="img/bluesky-brands.svg" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
@@ -80,6 +80,11 @@ document.addEventListener("DOMContentLoaded", () => {
         <span class="w3-large">Version 10.0 is here</span><br>
         <span><i class="fa-regular fa-hand-point-right"></i> <a href="/updates/10.0.html">Read More</a></span>
       </li> 
+      <li class="w3-padding-16">
+        <img src="img/share-from-square-regular.svg" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Sharing Just got Better</span><br>
+        <span>You can now Share post using Buffer & Bluesky!</span>
+      </li>
     </ul>
   </div>
   <hr> 
