@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
   </div>
   <!-- About Card -->
   <div class="w3-card w3-margin w3-margin-top">
-  <img src="img/oreo.jpg" style="width:100%">
+  <img src="img/oreo.jpeg" style="width:100%">
     <div class="w3-container w3-white">
       <h4><b>Oreo, <i class="fa-regular fa-hand-peace"></i></b></h4>
       <p>My Cat <i class="fa-regular fa-hand-point-down"></i><br><a href="/oreo.html">Learn More</a></p>
