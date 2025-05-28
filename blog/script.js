@@ -287,7 +287,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <li class="w3-padding-16">
         <img src="img/share-from-square-regular.svg" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
         <span class="w3-large">Sharing Just got Better</span><br>
-        <span>You can now Share post using Buffer & Bluesky!</span>
+        <span>You can now Share using Buffer, Bluesky & save to raindrop.io!</span>
       </li>
     </ul>
   </div>
