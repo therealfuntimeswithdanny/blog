@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   <div class="w3-card w3-margin w3-margin-top">
     <div class="w3-container w3-white">
       <h4><b>Danny Morrisey, <i class="fa-regular fa-hand-peace"></i></b></h4>
-      <p>Hi I'm Danny Morrisey A self taught Front End Web Developer, OG Raft player since 2022 & Head of Development @ Funtimes Media <i class="fa-regular fa-hand-point-down"></i><br><a href="https://corp.madebydanny.uk">Funtimes Media - Company Website</a></p>
+      <p>Hi I'm Danny Morrisey A self taught Front End Web Developer, OG Raft player since 2022 & Head of Development @ Funtimes Media <i class="fa-regular fa-hand-point-down"></i><br><a href="https://danielmorrisey.start.page">Learn more About Me!</a></p>
     </div>
   </div><hr>
   
@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Define your HTML snippet as a template string
   const headerHTML = `
-<p>Version 10.2.1 Stable, <a href="https://bsky.app/profile/madebydanny.uk/post/3lqfbuwu6ws2r">View Update Notes</a></p>
+<p>Version 10.2.2 Development, <a href="https://bsky.app/profile/madebydanny.uk/post/3lqffjew77s27">View Update Notes</a></p>
   `;
 
   // If the <nav-bar> element exists, inject the HTML into it
@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <!-- About Card -->
   <div class="w3-card w3-margin w3-margin-top">
     <div class="w3-container w3-white w3-text-black">
-      <h4><b>All systems are looking Good!</b></h4>
+      <h4><b>Site is under active Development</b></h4>
     </div>
   </div><hr>
   `;
@@ -206,7 +206,7 @@ document.addEventListener("DOMContentLoaded", () => {
   <div class="w3-card w3-margin w3-margin-top">
     <div class="w3-container w3-white">
       <h4><b>Danny Morrisey, <i class="fa-regular fa-hand-peace"></i></b></h4>
-      <p>Hi I'm Danny Morrisey A self taught Front End Web Developer, OG Raft player since 2022 & Head of Development @ Funtimes Media <i class="fa-regular fa-hand-point-down"></i><br><a href="https://corp.madebydanny.uk">Funtimes Media - Company Website</a></p>
+      <p>Hi I'm Danny Morrisey A self taught Front End Web Developer, OG Raft player since 2022 & Head of Development @ Funtimes Media <i class="fa-regular fa-hand-point-down"></i><br><a href="https://danielmorrisey.start.page">Learn More About Me!</a></p>
     </div>
   </div><hr>
 
@@ -317,3 +317,34 @@ document.addEventListener("DOMContentLoaded", () => {
     navBarEl.innerHTML = headerHTML;
   }
 });
+
+
+
+  class BlogFeedback extends HTMLElement {
+    constructor() {
+      super();
+      this.attachShadow({ mode: 'open' });
+    }
+
+    connectedCallback() {
+      // Get the blog id from the element attribute, defaulting to "1" if not provided.
+      const blogId = this.getAttribute("blog-id") || "1";
+      
+      // Create an iframe that loads the counter widget from your Cloudflare Worker.
+      const iframe = document.createElement("iframe");
+      // Style the iframe as needed.
+      iframe.style.border = "none";
+      iframe.style.width = "100%";
+      // Adjust the height to fit your widget's design.
+      iframe.style.height = "30px";
+      
+      // The iframe src points to the Cloudflare Worker endpoint for the desired blog in widget mode.
+      iframe.src = `https://likecounter-young-mouse-f484.madebydannyuk.workers.dev/blog-${blogId}?widget=1`;
+      
+      // Attach the iframe to the shadow DOM.
+      this.shadowRoot.appendChild(iframe);
+    }
+  }
+  
+  // Register the custom element as <blog-feedback>.
+  customElements.define("blog-feedback", BlogFeedback);
