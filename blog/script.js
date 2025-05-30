@@ -103,6 +103,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   // Select the <nav-bar> element
+  const navBarEl = document.querySelector("comments");
+
+  // Define your HTML snippet as a template string
+  const headerHTML = `
+            <h6><a href="#comments"><i class="fa-regular fa-comment"></i> Jump To Comments</a></h6>
+  `;
+
+  // If the <nav-bar> element exists, inject the HTML into it
+  if (navBarEl) {
+    navBarEl.innerHTML = headerHTML;
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Select the <nav-bar> element
   const navBarEl = document.querySelector("header");
 
   // Define your HTML snippet as a template string
@@ -125,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Define your HTML snippet as a template string
   const headerHTML = `
-<p>Version 10.1 Stable, <a href="https://a8591e7f.blog-bg3.pages.dev/">Switch to Version 9.0 (Archived) </a></p>
+<p>Version 10.2 Stable, <a href="https://a8591e7f.blog-bg3.pages.dev/">Switch to Version 9.0 (Archived) </a></p>
   `;
 
   // If the <nav-bar> element exists, inject the HTML into it

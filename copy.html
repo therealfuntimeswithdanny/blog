@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Copy Hostname to Clipboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    #message {
+      display: none;
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+      padding: 10px;
+      border-radius: 4px;
+      margin: 20px;
+    }
+    #fallback {
+      display: none;
+    }
+    .btn {
+      background-color: #007BFF;
+      padding: 8px 16px;
+      color: #fff;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    input[type="text"] {
+      padding: 6px;
+      font-size: 16px;
+      width: 200px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="message"></div>
+  <div id="fallback">
+    <p>Automatic copy failed. Please copy manually:</p>
+    <input type="text" id="manualInput" readonly>
+    <br>
+    <button class="btn" id="copyButton">Copy</button>
+  </div>
+  <p>To try this out, load the page with a URL like <code>?link=https://example.com</code></p>
+
+  <script>
+    // Retrieve a query parameter from the URL
+    function getQueryParameter(name) {
+      const params = new URLSearchParams(window.location.search);
+      return params.get(name);
+    }
+    
+    // Attempt to copy text using the Clipboard API
+    async function attemptClipboardCopy(text) {
+      try {
+        await navigator.clipboard.writeText(text);
+        console.log("Clipboard copy succeeded:", text);
+        return true;
+      } catch (err) {
+        console.error("Clipboard API failed:", err);
+        return false;
+      }
+    }
+    
+    // Display a success message
+    function showMessage(msg) {
+      const msgDiv = document.getElementById('message');
+      msgDiv.textContent = msg;
+      msgDiv.style.display = "block";
+    }
+    
+    // Setup the fallback UI for manual copying
+    function setupFallback(text) {
+      const fallbackDiv = document.getElementById('fallback');
+      fallbackDiv.style.display = 'block';
+      document.getElementById('manualInput').value = text;
+    }
+    
+    // Function used by the fallback button to copy text manually
+    function manualCopy() {
+      const input = document.getElementById('manualInput');
+      input.select();
+      document.execCommand("copy");  // using older execCommand API as a fallback.
+      showMessage("Successfully copied manually: " + input.value);
+      setTimeout(closePage, 2000);
+    }
+    
+    // Attempt to close the page after a brief delay
+    function closePage() {
+      window.close(); 
+      // Fallback if window.close() doesn't work.
+      window.location.href = "about:blank";
+    }
+    
+    // Main routine: extract the link, get hostname and copy it.
+    window.addEventListener("DOMContentLoaded", async () => {
+      const linkParam = getQueryParameter("link");
+      if (!linkParam) {
+        console.log("No link parameter provided.");
+        return;
+      }
+      
+      // Parse the URL and extract the hostname.
+      let hostname;
+      try {
+        const urlObj = new URL(linkParam);
+        hostname = urlObj.hostname;
+        // Optionally remove "www." prefix
+        if (hostname.startsWith("www.")) {
+          hostname = hostname.substring(4);
+        }
+      } catch (error) {
+        console.error("Invalid URL provided in 'link' parameter:", error);
+        return;
+      }
+      
+      // Try to copy automatically using the Clipboard API.
+      const copied = await attemptClipboardCopy(hostname);
+      if (copied) {
+        showMessage("Successfully copied " + hostname + " to clipboard!");
+        setTimeout(closePage, 2000);
+      } else {
+        // If the API fails, enable the fallback for manual copying
+        setupFallback(hostname);
+      }
+      
+      // Attach event listener to the fallback copy button
+      document.getElementById("copyButton").addEventListener("click", manualCopy);
+    });
+  </script>
+</body>
+</html>
