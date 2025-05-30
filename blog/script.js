@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <!-- About Card -->
   <div class="w3-card w3-margin w3-margin-top">
     <div class="w3-container w3-white w3-text-black">
-      <h4><b>Site is under active Development</b></h4>
+      <h4><b>All Systems are Working!</b></h4>
     </div>
   </div><hr>
   `;
@@ -217,6 +217,11 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
     <ul class="w3-ul w3-hoverable w3-white">
       <li class="w3-padding-16">
+        <img src="img/cloudflare-green.webp" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Going Green With Cloudflare</span><br>
+        <span><i class="fa-regular fa-hand-point-right"></i> <a href="going-green">Read More</a></span>
+      </li>
+      <li class="w3-padding-16">
         <img src="img/bluesky-brands.svg" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
         <span class="w3-large">How to Bluesky</span><br>
         <span><i class="fa-regular fa-hand-point-right"></i> <a href="how-to-bluesky.html">Read More</a></span>
@@ -225,12 +230,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT2CmLBr7ObpwYH1ii9yYseVqGLDyFMzTbcTGUZ36vnhq3HgSB-E74D9cRe7YO0MsLKwXnu" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
         <span class="w3-large">Raft</span><br>
         <span><i class="fa-regular fa-hand-point-right"></i> <a href="raft.html">Read More</a></span>
-      </li>   
-      <li class="w3-padding-16">
-        <img src="img/apple-brands-solid.svg" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">The iPhone 14, Three Years later</span><br>
-        <span><i class="fa-regular fa-hand-point-right"></i> <a href="iphone-14.html">Read More</a></span>
-      </li> 
+      </li>    
     </ul>
   </div>
   <hr> 
@@ -296,13 +296,13 @@ document.addEventListener("DOMContentLoaded", () => {
         <span class="w3-large">@madebydanny.uk Makes it to 80 Followers</span><br>
       </li>
       <li class="w3-padding-16">
-        <span class="w3-large">Version 10.0 is here</span><br>
-        <span><i class="fa-regular fa-hand-point-right"></i> <a href="/updates/10.0.html">Read More</a></span>
+        <span class="w3-large">Version 10.2 is here</span><br>
+        <span><i class="fa-regular fa-hand-point-right"></i> <a href="https://bsky.app/profile/madebydanny.uk/post/3lqffjew77s27">Read More</a></span>
       </li> 
       <li class="w3-padding-16">
         <img src="img/share-from-square-regular.svg" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
         <span class="w3-large">Sharing Just got Better</span><br>
-        <span>You can now Share using Buffer, Bluesky & save to raindrop.io!</span>
+        <span>You can now Share using Buffer, Bluesky, Reddit, Link, Email & save to raindrop.io!</span>
       </li>
     </ul>
   </div>
