@@ -216,6 +216,11 @@ document.addEventListener("DOMContentLoaded", () => {
       <h4><i class="fa-regular fa-clock"></i> Newest Posts</h4>
     </div>
     <ul class="w3-ul w3-hoverable w3-white">
+    <li class="w3-padding-16">
+        <img src="img/https___dev-to-uploads.s3.amazonaws.com_uploads_articles_a241qbegobyh3e4e9eq9.webp" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Is RSS a new way to search?</span><br>
+        <span><i class="fa-regular fa-hand-point-right"></i> <a href="rss-search.html">Read More</a></span>
+      </li>   
       <li class="w3-padding-16">
         <img src="img/cloudflare-green.webp" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
         <span class="w3-large">Going Green With Cloudflare</span><br>
@@ -225,12 +230,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <img src="img/bluesky-brands.svg" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
         <span class="w3-large">How to Bluesky</span><br>
         <span><i class="fa-regular fa-hand-point-right"></i> <a href="how-to-bluesky.html">Read More</a></span>
-      </li> 
-      <li class="w3-padding-16">
-        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT2CmLBr7ObpwYH1ii9yYseVqGLDyFMzTbcTGUZ36vnhq3HgSB-E74D9cRe7YO0MsLKwXnu" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Raft</span><br>
-        <span><i class="fa-regular fa-hand-point-right"></i> <a href="raft.html">Read More</a></span>
-      </li>    
+      </li>  
     </ul>
   </div>
   <hr> 
