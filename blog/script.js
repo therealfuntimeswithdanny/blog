@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Define your HTML snippet as a template string
   const headerHTML = `
-<header class="w3-container w3-center w3-padding-32"> 
+<header class="w3-container w3-center w3-padding-32 w3-animate-top"> 
   <h1><b><i class="fa-regular fa-hand-peace"></i></b></h1>
   <p><span class="w3-tag">Danny Morrisey</span></p>
 </header>
@@ -200,7 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Define your HTML snippet as a template string
   const headerHTML = `
    <!-- Introduction menu -->
-<div class="w3-col l4">
+<div class="w3-col l4 w3-animate-right">
 <status></status>
   <!-- About Card -->
   <div class="w3-card w3-margin w3-margin-top">
@@ -348,3 +348,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
   // Register the custom element as <blog-feedback>.
   customElements.define("blog-feedback", BlogFeedback);
+
+
+
+  
