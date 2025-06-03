@@ -218,18 +218,15 @@ document.addEventListener("DOMContentLoaded", () => {
     <ul class="w3-ul w3-hoverable w3-white">
     <li class="w3-padding-16">
         <img src="/blog/img/https___dev-to-uploads.s3.amazonaws.com_uploads_articles_a241qbegobyh3e4e9eq9.webp" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Is RSS a new way to search?</span><br>
-        <span><i class="fa-regular fa-hand-point-right"></i> <a href="rss-search.html">Read More</a></span>
+        <span class="w3-large"><a href="rss-search.html">Is RSS a new way to search?</a></span><br>
       </li>   
       <li class="w3-padding-16">
         <img src="/blog/img/cloudflare-green.webp" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Going Green With Cloudflare</span><br>
-        <span><i class="fa-regular fa-hand-point-right"></i> <a href="going-green">Read More</a></span>
+        <span class="w3-large"><a href="going-green.html">Going Green With Cloudflare</a></span><br>
       </li>
       <li class="w3-padding-16">
         <img src="/blog/img/bluesky-brands.svg" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">How to Bluesky</span><br>
-        <span><i class="fa-regular fa-hand-point-right"></i> <a href="how-to-bluesky.html">Read More</a></span>
+        <span class="w3-large"><a href="how-to-bluesky.html">How to Bluesky</a></span><br>
       </li>  
     </ul>
   </div>
@@ -321,31 +318,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   class BlogFeedback extends HTMLElement {
-    constructor() {
-      super();
-      this.attachShadow({ mode: 'open' });
-    }
-
-    connectedCallback() {
-      // Get the blog id from the element attribute, defaulting to "1" if not provided.
-      const blogId = this.getAttribute("blog-id") || "1";
-      
-      // Create an iframe that loads the counter widget from your Cloudflare Worker.
-      const iframe = document.createElement("iframe");
-      // Style the iframe as needed.
-      iframe.style.border = "none";
-      iframe.style.width = "100%";
-      // Adjust the height to fit your widget's design.
-      iframe.style.height = "30px";
-      
-      // The iframe src points to the Cloudflare Worker endpoint for the desired blog in widget mode.
-      iframe.src = `https://likecounter-young-mouse-f484.madebydannyuk.workers.dev/blog-${blogId}?widget=1`;
-      
-      // Attach the iframe to the shadow DOM.
-      this.shadowRoot.appendChild(iframe);
-    }
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
   }
-  
-  // Register the custom element as <blog-feedback>.
-  customElements.define("blog-feedback", BlogFeedback);
 
+  connectedCallback() {
+    // Get the blog id from the element attribute, defaulting to "1" if not provided.
+    const blogId = this.getAttribute("blog-id") || "1";
+    
+    // Create an iframe that loads the counter widget from your Cloudflare Worker.
+    const iframe = document.createElement("iframe");
+    // Style the iframe as needed.
+    iframe.style.border = "none";
+    iframe.style.width = "100%";
+    // Adjust the height to fit your widget's design.
+    iframe.style.height = "30px";
+    
+    // Add a title attribute to the iframe for accessibility.
+    iframe.title = "Blog Feedback Widget";
+    
+    // The iframe src points to the Cloudflare Worker endpoint for the desired blog in widget mode.
+    iframe.src = `https://likecounter-young-mouse-f484.madebydannyuk.workers.dev/blog-${blogId}?widget=1`;
+    
+    // Attach the iframe to the shadow DOM.
+    this.shadowRoot.appendChild(iframe);
+  }
+}
+
+// Register the custom element as <blog-feedback>.
+customElements.define("blog-feedback", BlogFeedback);
