@@ -275,7 +275,7 @@ document.addEventListener("DOMContentLoaded", () => {
   </div>
   <!-- About Card -->
   <div class="w3-card w3-margin w3-margin-top">
-  <img src="/blog/img/oreo.jpeg" style="width:100%">
+  <img src="/blog/img/oreo.jpeg" alt="photo of my cat Oreo" style="width:100%">
     <div class="w3-container w3-white">
       <h4><b>Oreo, <i class="fa-regular fa-hand-peace"></i></b></h4>
     </div>
