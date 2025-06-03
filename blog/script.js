@@ -349,3 +349,34 @@ document.addEventListener("DOMContentLoaded", () => {
   // Register the custom element as <blog-feedback>.
   customElements.define("blog-feedback", BlogFeedback);
 
+class BlogFeedback extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+  }
+
+  connectedCallback() {
+    // Get the blog id from the element attribute, defaulting to "1" if not provided.
+    const blogId = this.getAttribute("blog-id") || "1";
+    
+    // Create an iframe that loads the counter widget from your Cloudflare Worker.
+    const iframe = document.createElement("iframe");
+    // Style the iframe as needed.
+    iframe.style.border = "none";
+    iframe.style.width = "100%";
+    // Adjust the height to fit your widget's design.
+    iframe.style.height = "30px";
+    
+    // Add a title attribute to the iframe for accessibility.
+    iframe.title = "Blog Feedback Widget";
+    
+    // The iframe src points to the Cloudflare Worker endpoint for the desired blog in widget mode.
+    iframe.src = `https://likecounter-young-mouse-f484.madebydannyuk.workers.dev/blog-${blogId}?widget=1`;
+    
+    // Attach the iframe to the shadow DOM.
+    this.shadowRoot.appendChild(iframe);
+  }
+}
+
+// Register the custom element as <blog-feedback>.
+customElements.define("blog-feedback", BlogFeedback);
