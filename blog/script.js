@@ -56,10 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
         <span class="w3-large">@madebydanny.uk Makes it to 80 Followers</span><br>
       </li>
       <li class="w3-padding-16">
-        <span class="w3-large">Version 10.0 is here</span><br>
-        <span><i class="fa-regular fa-hand-point-right"></i> <a href="/updates/10.0.html">Read More</a></span>
-      </li> 
-      <li class="w3-padding-16">
         <img src="/blog/img/share-from-square-regular.svg" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
         <span class="w3-large">Sharing Just got Better</span><br>
         <span>You can now Share post using Buffer & Bluesky!</span>
