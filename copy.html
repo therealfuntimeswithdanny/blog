@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Manual Hostname Copier</title>
+  <title>Manual URL Copier</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -22,7 +22,7 @@
       text-align: center;
     }
     input[type="text"] {
-      width: 250px;
+      width: 300px;
       padding: 8px;
       font-size: 16px;
       text-align: center;
@@ -54,38 +54,22 @@
 </head>
 <body>
   <div class="container">
-    <p id="infoText">Click the button to copy the hostname extracted from the link parameter:</p>
-    <input type="text" id="hostnameInput" readonly>
+    <p id="infoText">Click the button to copy the full URL provided in the link parameter:</p>
+    <input type="text" id="urlInput" readonly>
     <br>
-    <button id="copyBtn">Copy Hostname</button>
+    <button id="copyBtn">Copy URL</button>
     <div id="message"></div>
   </div>
 
   <script>
-    // Retrieve query parameter from URL by name.
+    // Retrieve a query parameter by name from the URL.
     function getQueryParam(name) {
       const params = new URLSearchParams(window.location.search);
       return params.get(name);
     }
-
-    // Extract hostname from the provided link, removing the "www." if desired.
-    function extractHostname(link) {
-      try {
-        const url = new URL(link);
-        let hostname = url.hostname;
-        if (hostname.startsWith('www.')) {
-          hostname = hostname.substring(4);
-        }
-        return hostname;
-      } catch (error) {
-        console.error('Error parsing URL:', error);
-        return null;
-      }
-    }
-
-    // Attempt to copy the text using Clipboard API, fallback to document.execCommand.
+    
+    // Try to copy the provided text using the Clipboard API and fallback if needed.
     async function copyText(text) {
-      // Try Clipboard API first.
       if (navigator.clipboard && navigator.clipboard.writeText) {
         try {
           await navigator.clipboard.writeText(text);
@@ -95,7 +79,7 @@
         }
       }
       // Fallback using execCommand
-      const inputField = document.getElementById('hostnameInput');
+      const inputField = document.getElementById('urlInput');
       inputField.select();
       try {
         const successful = document.execCommand('copy');
@@ -105,49 +89,41 @@
       }
       return false;
     }
-
+    
     // Display a feedback message and close the page after 2 seconds.
     function showMessageAndClose(message) {
       const messageDiv = document.getElementById('message');
       messageDiv.textContent = message;
       messageDiv.style.display = 'block';
-
       setTimeout(() => {
         window.close();
         window.location.href = "about:blank";
       }, 2000);
     }
-
+    
     document.addEventListener('DOMContentLoaded', () => {
-      const linkParam = getQueryParam('link');
-      const hostnameInput = document.getElementById('hostnameInput');
+      const urlParam = getQueryParam('link');
+      const urlInput = document.getElementById('urlInput');
       const copyBtn = document.getElementById('copyBtn');
       const infoText = document.getElementById('infoText');
 
-      // If no link parameter is provided, disable the button.
-      if (!linkParam) {
+      if (!urlParam) {
         infoText.textContent = 'No link parameter provided in the URL.';
-        hostnameInput.value = '';
+        urlInput.value = '';
         copyBtn.disabled = true;
         return;
       }
-
-      // Extract the hostname.
-      const hostname = extractHostname(linkParam);
-      if (!hostname) {
-        infoText.textContent = 'Invalid URL provided in the link parameter.';
-        copyBtn.disabled = true;
-        return;
-      }
-      hostnameInput.value = hostname;
-
+      
+      // Display the full URL in the input field.
+      urlInput.value = urlParam;
+      
       // Always require the user to press the button.
       copyBtn.addEventListener('click', async () => {
-        const success = await copyText(hostname);
+        const success = await copyText(urlParam);
         if (success) {
-          showMessageAndClose(`Successfully copied: ${hostname}`);
+          showMessageAndClose(`Successfully copied: ${urlParam}`);
         } else {
-          showMessageAndClose(`Failed to copy: ${hostname}`);
+          showMessageAndClose(`Failed to copy: ${urlParam}`);
         }
       });
     });
