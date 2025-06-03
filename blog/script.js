@@ -351,4 +351,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  
+      document.addEventListener("DOMContentLoaded", function () {
+      const lazyElements = document.querySelectorAll(".lazy-content");
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible"); // Apply styling for the visible state
+            observer.unobserve(entry.target);
+          }
+        });
+      });
+
+      lazyElements.forEach(el => observer.observe(el));
+    });
