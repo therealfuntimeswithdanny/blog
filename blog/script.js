@@ -22,12 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
     <ul class="w3-ul w3-hoverable w3-white">
       <li class="w3-padding-16">
-        <img src="img/apple-brands-solid.svg" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <img src="/blog/img/apple-brands-solid.svg" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
         <span class="w3-large">The iPhone 14, Three Years later</span><br>
         <span><i class="fa-regular fa-hand-point-right"></i> <a href="iphone-14.html">Read More</a></span>
       </li>
       <li class="w3-padding-16">
-        <img src="img/bluesky-brands.svg" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <img src="/blog/img/bluesky-brands.svg" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
         <span class="w3-large">Bluesky Adds new a form of Verification</span><br>
         <span><i class="fa-regular fa-hand-point-right"></i> <a href="bluesky-verification.html">Read More</a></span>
       </li> 
@@ -47,12 +47,12 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
     <ul class="w3-ul w3-hoverable w3-white">
     <li class="w3-padding-16">
-        <img src="img/buffer-brands.svg" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <img src="/blog/img/buffer-brands.svg" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
         <span class="w3-large">16 Weeks of Buffer!</span><br>
         <span><i class="fa-regular fa-hand-point-right"></i> <a href="https://bsky.app/profile/madebydanny.uk/post/3lq3nxzj57222">View Post</a></span>
       </li>
       <li class="w3-padding-16">
-        <img src="img/bluesky-brands.svg" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <img src="/blog/img/bluesky-brands.svg" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
         <span class="w3-large">@madebydanny.uk Makes it to 80 Followers</span><br>
       </li>
       <li class="w3-padding-16">
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <span><i class="fa-regular fa-hand-point-right"></i> <a href="/updates/10.0.html">Read More</a></span>
       </li> 
       <li class="w3-padding-16">
-        <img src="img/share-from-square-regular.svg" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <img src="/blog/img/share-from-square-regular.svg" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
         <span class="w3-large">Sharing Just got Better</span><br>
         <span>You can now Share post using Buffer & Bluesky!</span>
       </li>
@@ -217,17 +217,17 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
     <ul class="w3-ul w3-hoverable w3-white">
     <li class="w3-padding-16">
-        <img src="img/https___dev-to-uploads.s3.amazonaws.com_uploads_articles_a241qbegobyh3e4e9eq9.webp" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <img src="/blog/img/https___dev-to-uploads.s3.amazonaws.com_uploads_articles_a241qbegobyh3e4e9eq9.webp" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
         <span class="w3-large">Is RSS a new way to search?</span><br>
         <span><i class="fa-regular fa-hand-point-right"></i> <a href="rss-search.html">Read More</a></span>
       </li>   
       <li class="w3-padding-16">
-        <img src="img/cloudflare-green.webp" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <img src="/blog/img/cloudflare-green.webp" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
         <span class="w3-large">Going Green With Cloudflare</span><br>
         <span><i class="fa-regular fa-hand-point-right"></i> <a href="going-green">Read More</a></span>
       </li>
       <li class="w3-padding-16">
-        <img src="img/bluesky-brands.svg" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <img src="/blog/img/bluesky-brands.svg" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
         <span class="w3-large">How to Bluesky</span><br>
         <span><i class="fa-regular fa-hand-point-right"></i> <a href="how-to-bluesky.html">Read More</a></span>
       </li>  
@@ -242,12 +242,12 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
     <ul class="w3-ul w3-hoverable w3-white">
       <li class="w3-padding-16">
-        <img src="img/apple-brands-solid.svg" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <img src="/blog/img/apple-brands-solid.svg" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
         <span class="w3-large">The iPhone 14, Three Years later</span><br>
         <span><i class="fa-regular fa-hand-point-right"></i> <a href="iphone-14.html">Read More</a></span>
       </li>
       <li class="w3-padding-16">
-        <img src="img/bluesky-brands.svg" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <img src="/blog/img/bluesky-brands.svg" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
         <span class="w3-large">Bluesky Adds new a form of Verification</span><br>
         <span><i class="fa-regular fa-hand-point-right"></i> <a href="bluesky-verification.html">Read More</a></span>
       </li> 
@@ -275,7 +275,7 @@ document.addEventListener("DOMContentLoaded", () => {
   </div>
   <!-- About Card -->
   <div class="w3-card w3-margin w3-margin-top">
-  <img src="img/oreo.jpeg" style="width:100%">
+  <img src="/blog/img/oreo.jpeg" style="width:100%">
     <div class="w3-container w3-white">
       <h4><b>Oreo, <i class="fa-regular fa-hand-peace"></i></b></h4>
     </div>
@@ -287,12 +287,12 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
     <ul class="w3-ul w3-hoverable w3-white">
     <li class="w3-padding-16">
-        <img src="img/buffer-brands.svg" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <img src="/blog/img/buffer-brands.svg" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
         <span class="w3-large">16 Weeks of Buffer!</span><br>
         <span><i class="fa-regular fa-hand-point-right"></i> <a href="https://bsky.app/profile/madebydanny.uk/post/3lq3nxzj57222">View Post</a></span>
       </li>
       <li class="w3-padding-16">
-        <img src="img/bluesky-brands.svg" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <img src="/blog/img/bluesky-brands.svg" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
         <span class="w3-large">@madebydanny.uk Makes it to 80 Followers</span><br>
       </li>
       <li class="w3-padding-16">
@@ -300,7 +300,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <span><i class="fa-regular fa-hand-point-right"></i> <a href="https://bsky.app/profile/madebydanny.uk/post/3lqffjew77s27">Read More</a></span>
       </li> 
       <li class="w3-padding-16">
-        <img src="img/share-from-square-regular.svg" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <img src="/blog/img/share-from-square-regular.svg" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
         <span class="w3-large">Sharing Just got Better</span><br>
         <span>You can now Share using Buffer, Bluesky, Reddit, Link, Email & save to raindrop.io!</span>
       </li>
