@@ -219,17 +219,17 @@ document.addEventListener("DOMContentLoaded", () => {
     <li class="w3-padding-16">
         <img src="/blog/img/https___dev-to-uploads.s3.amazonaws.com_uploads_articles_a241qbegobyh3e4e9eq9.webp" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
         <span class="w3-large">Is RSS a new way to search?</span><br>
-        <span><i class="fa-regular fa-hand-point-right"></i> <a href="rss-search.html">Read More</a></span>
+        <span><i class="fa-regular fa-hand-point-right"></i> <a href="rss-search.html">Learn More about the new way to search</a></span>
       </li>   
       <li class="w3-padding-16">
         <img src="/blog/img/cloudflare-green.webp" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
         <span class="w3-large">Going Green With Cloudflare</span><br>
-        <span><i class="fa-regular fa-hand-point-right"></i> <a href="going-green">Read More</a></span>
+        <span><i class="fa-regular fa-hand-point-right"></i> <a href="going-green">See how going green Helps you!</a></span>
       </li>
       <li class="w3-padding-16">
         <img src="/blog/img/bluesky-brands.svg" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
         <span class="w3-large">How to Bluesky</span><br>
-        <span><i class="fa-regular fa-hand-point-right"></i> <a href="how-to-bluesky.html">Read More</a></span>
+        <span><i class="fa-regular fa-hand-point-right"></i> <a href="how-to-bluesky.html">Learn to Bluesky</a></span>
       </li>  
     </ul>
   </div>
@@ -244,17 +244,17 @@ document.addEventListener("DOMContentLoaded", () => {
       <li class="w3-padding-16">
         <img src="/blog/img/apple-brands-solid.svg" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
         <span class="w3-large">The iPhone 14, Three Years later</span><br>
-        <span><i class="fa-regular fa-hand-point-right"></i> <a href="iphone-14.html">Read More</a></span>
+        <span><i class="fa-regular fa-hand-point-right"></i> <a href="iphone-14.html">See how it Stacks up!</a></span>
       </li>
       <li class="w3-padding-16">
         <img src="/blog/img/bluesky-brands.svg" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
         <span class="w3-large">Bluesky Adds new a form of Verification</span><br>
-        <span><i class="fa-regular fa-hand-point-right"></i> <a href="bluesky-verification.html">Read More</a></span>
+        <span><i class="fa-regular fa-hand-point-right"></i> <a href="bluesky-verification.html">Make your self stand out!</a></span>
       </li> 
       <li class="w3-padding-16">
         <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT2CmLBr7ObpwYH1ii9yYseVqGLDyFMzTbcTGUZ36vnhq3HgSB-E74D9cRe7YO0MsLKwXnu" load="lazy" alt="Image" class="w3-left w3-margin-right" style="width:50px">
         <span class="w3-large">Raft</span><br>
-        <span><i class="fa-regular fa-hand-point-right"></i> <a href="raft.html">Read More</a></span>
+        <span><i class="fa-regular fa-hand-point-right"></i> <a href="raft.html">It's the best video game!</a></span>
       </li>    
     </ul>
   </div>
