@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blue Bird Video Player Documentation</title>
+  <!-- Include your Font Awesome kit -->
+  <script src="https://kit.fontawesome.com/0ca27f8db1.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    h1, h2, h3 {
+      color: #222;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    pre {
+      background: #eee;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+      position: relative;
+      margin-top: 0;
+    }
+    code {
+      font-family: Consolas, monospace;
+    }
+    .code-container {
+      position: relative;
+      margin: 20px 0;
+    }
+    .copy-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #007BFF;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      font-size: 12px;
+      border-radius: 3px;
+      cursor: pointer;
+      z-index: 1;
+    }
+    .copy-button:hover {
+      background: #0056b3;
+    }
+    a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .demo {
+      margin: 20px 0;
+      padding: 10px;
+      background: #fff;
+      border: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+      <h1 style="text-align: center;">Blue Bird Video Player</h1>
+      <h2 style="text-align: center;">The best way to watch videos in HTML</h2>
+      <h3>What is Blue Bird?</h3>
+      <p>Blue Bird is a simple yet very powerfull video player for HTML just simply add 2 lines of code to get started.<br>
+      Don't waste time styling and coding a video player for your blog, website, podcast, etc, just use Blue Bird.<br>
+      It's fast, free & open source.</p>
+      <hr>
+    <h1>Blue Bird Video Player Documentation</h1>
+    <p>
+      The Blue Bird Video Player comes in two versions:
+    </p>
+    <ul>
+      <li>
+        <strong>Simple Version:</strong> A basic video player with three controls – rewind 5 seconds, play/pause, and forward 5 seconds. Use the element <code>&lt;blue-bird-link-simple&gt;</code>.
+      </li>
+      <li>
+        <strong>Advanced Version:</strong> A feature-rich player that includes all simple controls plus additional features such as a progress bar, mute/unmute, and fullscreen toggle. Use the element <code>&lt;blue-bird-link-advanced&gt;</code>.
+      </li>
+    </ul>
+
+    <h2>Step 1: Include the Blue Bird Video Player Script</h2>
+    <p>
+      To use the Blue Bird Video Player on your website, include the following single line in your page's <code>&lt;head&gt;</code> section:
+    </p>
+    <div class="code-container">
+      <button class="copy-button" onclick="copyCode(this)">Copy</button>
+      <pre><code>&lt;https://madebydanny.uk/bluebird/api/v1.js"&gt;&lt;/script&gt;</code></pre>
+    </div>
+    <p>
+      Make sure the <code>https://madebydanny.uk/bluebird/api/v1.js</code> file (which contains the code for both <code>&lt;blue-bird-link-simple&gt;</code> and <code>&lt;blue-bird-link-advanced&gt;</code>) is accessible by your site.
+    </p>
+    
+    <h2>Step 2: Add Your Font Awesome Kit</h2>
+    <p>
+      Your page should include your Font Awesome kit in the head. If you don't have a Fontawesome kit use the one provided bellow:
+    </p>
+    <div class="code-container">
+      <button class="copy-button" onclick="copyCode(this)">Copy</button>
+      <pre><code>&lt;script src="https://kit.fontawesome.com/0ca27f8db1.js" crossorigin="anonymous"&gt;&lt;/script&gt;</code></pre>
+    </div>
+    
+    <h2>Step 3: Use the Custom Element(s)</h2>
+    <p>
+      Once you have included the script and your Font Awesome kit, you can use the custom elements anywhere in your HTML.
+    </p>
+    
+    <h3>Simple Version Usage</h3>
+    <p>
+      Insert the simple version using:
+    </p>
+    <div class="code-container">
+      <button class="copy-button" onclick="copyCode(this)">Copy</button>
+      <pre><code>&lt;blue-bird-link-simple src="your-video.mp4" size="norm"&gt;&lt;/blue-bird-link-simple&gt;</code></pre>
+    </div>
+    <p>
+      <strong>Attributes:</strong>
+      <br>
+      <code>src</code> – The URL (or path) to your video file.
+      <br>
+      <code>size</code> – (Optional) The preset size of your video player:
+      <br>
+      &bull; <code>big</code> for 1080px wide,
+      <br>
+      &bull; <code>norm</code> (default) for 720px wide,
+      <br>
+      &bull; <code>small</code> for 480px wide.
+    </p>
+    
+    <h3>Advanced Version Usage</h3>
+    <p>
+      Insert the advanced version using:
+    </p>
+    <div class="code-container">
+      <button class="copy-button" onclick="copyCode(this)">Copy</button>
+      <pre><code>&lt;blue-bird-link-advanced src="your-video.mp4" size="norm"&gt;&lt;/blue-bird-link-advanced&gt;</code></pre>
+    </div>
+    <p>
+      This version includes additional controls:
+      <ul>
+        <li>A progress bar (click to seek anywhere in the video)</li>
+        <li>A mute/unmute button</li>
+        <li>A fullscreen toggle</li>
+      </ul>
+    </p>
+    
+    <h2>Complete Example</h2>
+    <p>
+      Here is a complete example of an HTML page that uses the Blue Bird Video Player elements:
+    </p>
+    <div class="code-container">
+      <button class="copy-button" onclick="copyCode(this)">Copy</button>
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;My Video Page&lt;/title&gt;
+    &lt;!-- Include Font Awesome Kit --&gt;
+    &lt;script src="https://kit.fontawesome.com/0ca27f8db1.js" crossorigin="anonymous"&gt;&lt;/script&gt;
+    &lt;!-- Include the Blue Bird Video Player Script --&gt;
+    &lt;script src="https://madebydanny.uk/bluebird/api/v1.js"&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Welcome to My Video Page&lt;/h1&gt;
+    
+    &lt;h2&gt;Simple Video Player&lt;/h2&gt;
+    &lt;blue-bird-link-simple src="mov_bbb.mp4" size="norm"&gt;&lt;/blue-bird-link-simple&gt;
+    
+    &lt;h2&gt;Advanced Video Player&lt;/h2&gt;
+    &lt;blue-bird-link-advanced src="mov_bbb.mp4" size="norm"&gt;&lt;/blue-bird-link-advanced&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </div>
+    
+    <p>
+      That’s it! With just one line to include the script and the use of either <code>&lt;blue-bird-link-simple&gt;</code> or <code>&lt;blue-bird-link-advanced&gt;</code>, you can easily add a custom video player to your website.
+    </p>
+    
+    <h2>Additional Information</h2>
+    <p>
+      If you need to modify the player or extend its functionality, you can edit the <code>blue-bird-link.js</code> file directly. For questions or support, please contact our team or visit our <a href="https://github.com/therealfuntimeswithdanny/blue-bird">GitHub Repository</a>.
+    </p>
+      <hr>
+      <p style="text-align: center;">&copy; 2025 <a href="https://madebydanny.uk/about/funtimesmedia"><i>Funtimes Media</i></a> | API Powered by <a href="https://cloudflare.com"><i>Cloudflare</i></a></p>
+  </div>
+  
+  <script>
+    // Function to copy code from a code container when the copy button is clicked
+    function copyCode(el) {
+      // The code block is assumed to be the next sibling of the button's parent container.
+      // We select the <pre> element within the same container.
+      const codeBlock = el.nextElementSibling;
+      const codeText = codeBlock.innerText;
+      
+      // Use clipboard API to copy the text
+      navigator.clipboard.writeText(codeText).then(() => {
+        // Optionally, update the button text to notify the user
+        el.innerText = 'Copied!';
+        setTimeout(() => {
+          el.innerText = 'Copy';
+        }, 2000);
+      }).catch(err => {
+        console.error('Error copying text: ', err);
+      });
+    }
+  </script>
+</body>
+</html>
