@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Nothing Here at Your URL</title>
+  <!-- W3.CSS for styles -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="w3-container w3-center w3-padding-64">
+    <!-- Big playful title -->
+    <h1 class="w3-jumbo w3-text-orange">Nothing Here</h1>
+    <!-- Subheading showing the current URL -->
+    <!-- Friendly message -->
+    <p class="w3-large">
+      Whoops! Looks like this subdomain is taking a break or hasn't been set up yet. <br>
+      It might be off on an adventure or just hiding in plain sight!
+    </p>
+    <p class="w3-small">
+        The domain <b>madebydanny.uk</b>, <b>funtimesmedia.uk</b>, <b>mbdio.uk</b> is owned by <i><a href="https://funtimesmedia.uk">Funtimes Media</a></i>
+    </p>
+    
+    <!-- Fun Font Awesome icons to emphasize the mood -->
+    <div class="w3-xxlarge w3-margin-top">
+      <i class="fa-solid fa-face-frown"></i>
+      <i class="fa-solid fa-hourglass-half"></i>
+      <i class="fa-solid fa-face-frown"></i>
+    </div>
+    
+    <br><br>
+    
+    <!-- Button to return to the main home page -->
+    <a href="https://madebydanny.uk/about/funtimesmedia" class="w3-button w3-teal w3-round-large w3-hover-orange w3-large">
+      <i class="fa-solid fa-house-chimney"></i> Go Home
+    </a>
+  </div>
+
+  <script>
+    // Dynamically display the current page's URL
+    document.getElementById("current-url").textContent = window.location.href;
+  </script>
+  
+</body>
+</html>
