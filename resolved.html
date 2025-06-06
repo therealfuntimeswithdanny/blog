@@ -7,10 +7,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
     <link rel="icon" href="favicon.ico" />
     <script src="https://kit.fontawesome.com/0ca27f8db1.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=EB+Garamond:400" rel="stylesheet" />
-
+    <link
+      href="https://fonts.googleapis.com/css?family=EB+Garamond:400"
+      rel="stylesheet"
+    />
     <style type="text/css">
-      /* Root variables based on user's color scheme */
+      /* Color scheme based on user's preferences */
       @media (prefers-color-scheme: light) {
         :root {
           --text-color: #111;
@@ -31,8 +33,7 @@
         --text-color: #fff;
         --background-color: #111;
       }
-
-      /* Global styles for body and main container */
+      /* Global body and layout styling */
       body {
         font-family: "EB Garamond", serif;
         color: var(--text-color);
@@ -50,7 +51,7 @@
         align-content: center;
       }
       .page {
-        /* Hidden by default; only the picked one will be visible */
+        /* By default, pages are hidden; one is made visible at random */
         display: none;
         text-align: center;
       }
@@ -59,8 +60,7 @@
         font-size: 28px;
         font-weight: 400;
       }
-
-      /* Attribution block styles */
+      /* Attribution styling */
       #attribution {
         position: fixed;
         bottom: 0;
@@ -91,86 +91,149 @@
       }
     </style>
   </head>
-
   <body class="light">
     <main>
-      <!-- Variation 1: Classic minimal design -->
+      <!-- Basic Pages (10 Variations) -->
+      <!-- Variation 1 -->
       <div class="page">
-        <h1>
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </h1>
+        <h1><i class="fa-solid fa-magnifying-glass"></i></h1>
         <h1 class="intentionally-blank">
           This page was intentionally left blank.
         </h1>
       </div>
-
-      <!-- Variation 2: Playful minimal design -->
+      <!-- Variation 2 -->
       <div class="page">
-        <h1>
-          <i class="fa-solid fa-question"></i>
-        </h1>
+        <h1><i class="fa-solid fa-question"></i></h1>
         <h1 class="intentionally-blank">
           Perhaps there's nothing to see here.
         </h1>
       </div>
-
-      <!-- Variation 3: Basic page with a twist -->
+      <!-- Variation 3 -->
       <div class="page">
-        <h1>
-          <i class="fa-solid fa-circle-notch"></i>
-        </h1>
+        <h1><i class="fa-solid fa-circle-notch"></i></h1>
         <h1 class="intentionally-blank">
           Stay simple. Stay mysterious.
         </h1>
       </div>
-
-      <!-- Variation 4: Basic info page -->
+      <!-- Variation 4 -->
       <div class="page">
-        <h1>
-          <i class="fa-solid fa-info"></i>
-        </h1>
+        <h1><i class="fa-solid fa-info"></i></h1>
         <h1 class="intentionally-blank">
           Nothing extraordinary, just simplicity.
         </h1>
       </div>
-
-      <!-- Variation 5: Basic calm page -->
+      <!-- Variation 5 -->
       <div class="page">
-        <h1>
-          <i class="fa-solid fa-heart"></i>
-        </h1>
+        <h1><i class="fa-solid fa-heart"></i></h1>
         <h1 class="intentionally-blank">
           Keep your heart open to mystery.
         </h1>
       </div>
-
-      <!-- Variation 6: Nature inspired basic page -->
+      <!-- Variation 6 -->
       <div class="page">
-        <h1>
-          <i class="fa-solid fa-leaf"></i>
-        </h1>
+        <h1><i class="fa-solid fa-leaf"></i></h1>
         <h1 class="intentionally-blank">
           Nature whispers secrets in silence.
         </h1>
       </div>
-
-      <!-- Variation 7: Smiling basic page -->
+      <!-- Variation 7 -->
       <div class="page">
-        <h1>
-          <i class="fa-solid fa-smile"></i>
-        </h1>
+        <h1><i class="fa-solid fa-smile"></i></h1>
         <h1 class="intentionally-blank">
           A smile hides endless possibilities.
         </h1>
       </div>
-
-      <!-- Variation 8: Night inspired basic page -->
+      <!-- Variation 8 -->
       <div class="page">
-        <h1>
-          <i class="fa-solid fa-moon"></i>
-        </h1>
+        <h1><i class="fa-solid fa-moon"></i></h1>
         <h1 class="intentionally-blank">
           Find solace in the quiet night.
+        </h1>
+      </div>
+      <!-- Variation 19 (renumbered as basic 9) -->
+      <div class="page">
+        <h1><i class="fa-solid fa-gem"></i></h1>
+        <h1 class="intentionally-blank">
+          Bare and simple, like an unturned stone.
+        </h1>
+      </div>
+      <!-- Variation 20 (renumbered as basic 10) -->
+      <div class="page">
+        <h1><i class="fa-solid fa-border-all"></i></h1>
+        <h1 class="intentionally-blank">
+          Minimalism in every pixel.
+        </h1>
+      </div>
+
+      <!-- DNS & Unresolved Themed Pages (10 Variations) -->
+      <!-- Variation 9 -->
+      <div class="page">
+        <h1><i class="fa-solid fa-globe"></i></h1>
+        <h1 class="intentionally-blank">
+          DNS error: Unresolved domain.
+        </h1>
+      </div>
+      <!-- Variation 10 -->
+      <div class="page">
+        <h1><i class="fa-solid fa-network-wired"></i></h1>
+        <h1 class="intentionally-blank">
+          DNS unresolved: The query returns emptiness.
+        </h1>
+      </div>
+      <!-- Variation 11 -->
+      <div class="page">
+        <h1><i class="fa-solid fa-compass"></i></h1>
+        <h1 class="intentionally-blank">
+          DNS unresolved: Lost in the address space.
+        </h1>
+      </div>
+      <!-- Variation 12 -->
+      <div class="page">
+        <h1><i class="fa-solid fa-exclamation-triangle"></i></h1>
+        <h1 class="intentionally-blank">
+          DNS issues persist: Domain not found.
+        </h1>
+      </div>
+      <!-- Variation 13 -->
+      <div class="page">
+        <h1><i class="fa-solid fa-scroll"></i></h1>
+        <h1 class="intentionally-blank">
+          The DNS saga remains unresolved.
+        </h1>
+      </div>
+      <!-- Variation 14 -->
+      <div class="page">
+        <h1><i class="fa-solid fa-database"></i></h1>
+        <h1 class="intentionally-blank">
+          DNS, DNS, and still unresolved.
+        </h1>
+      </div>
+      <!-- Variation 15 -->
+      <div class="page">
+        <h1><i class="fa-solid fa-arrows-alt"></i></h1>
+        <h1 class="intentionally-blank">
+          All roads lead to unresolved DNS.
+        </h1>
+      </div>
+      <!-- Variation 16 -->
+      <div class="page">
+        <h1><i class="fa-solid fa-phone"></i></h1>
+        <h1 class="intentionally-blank">
+          DNS dialing: no answers.
+        </h1>
+      </div>
+      <!-- Variation 17 -->
+      <div class="page">
+        <h1><i class="fa-solid fa-search"></i></h1>
+        <h1 class="intentionally-blank">
+          Lost in DNS: Unresolved queries.
+        </h1>
+      </div>
+      <!-- Variation 18 -->
+      <div class="page">
+        <h1><i class="fa-solid fa-ban"></i></h1>
+        <h1 class="intentionally-blank">
+          DNS stands for Does Not Solve.
         </h1>
       </div>
     </main>
@@ -181,7 +244,6 @@
         const pages = document.querySelectorAll(".page");
         let lastIndex = parseInt(localStorage.getItem("lastIndex"), 10);
         let randomIndex;
-        // Continue picking a random index until it's not the same as the last one.
         do {
           randomIndex = Math.floor(Math.random() * pages.length);
         } while (pages.length > 1 && randomIndex === lastIndex);
