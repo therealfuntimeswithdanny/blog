@@ -1,177 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Funtimes Media - corp.madebydanny.uk</title>
   <link rel="shortcut icon" href="/blog/img/icon.jpg">
-  <!-- Open Graph Tags -->
+
   <meta name="description" content="WWDC25 is here! Apple has announced the dates for WWDC25, and we are excited to see what new features and products they will unveil.">
   <meta property="og:title" content="WWDC25 - Danny's Blog">
   <meta property="og:description" content="WWDC25 is here! Apple has announced the dates for WWDC25, and we are excited to see what new features and products they will unveil.">
   <meta property="og:url" content="https://madebydanny.uk/wwdc35/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="/blog/img/ftm/designer.png">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Oi&family=Rubik+Spray+Paint&display=swap');
-    
-    body, h1, h2, h3, h4, h5 {
-      font-family: "Raleway", sans-serif;
-    }
-    
-    /* Responsive banner image */
-    .responsive-banner {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-  </style>
-  <script src="https://kit.fontawesome.com/0ca27f8db1.js" crossorigin="anonymous"></script>
-  <script src="/blog/script.js"></script>
-</head>
-<body class="w3-black">
 
-  <!-- w3-content defines a container for fixed size centered content -->
-  <div class="w3-animate-top"></div>
-  <div class="w3-content" style="max-width:1400px">
-  
-    <!-- Banner Image -->
-    <img src="/blog/img/ftm/Designer.png" loading="lazy" alt="Failed to reach: cloudflare-cdn.madebydanny.uk" class="responsive-banner">
-    
-    <!-- Grid -->
-    <div class="w3-row">
-    
-      <!-- Blog entries -->
-      <div class="w3-col l8 s12">
-        <!-- Blog entry -->
-        <div class="w3-card-4 w3-margin w3-white w3-animate-left">
-          <div class="w3-container">
-            <h3><b>Never Unresolved</b></h3>
-          </div>
-          <div class="w3-container">
-            <p>Always Keep your Domain Pointed to a Live Website</p>
-          </div>
-          <button class="w3-button w3-padding-large w3-white">
-                    <b>
-                      <i class="fa-regular fa-hand-point-right"></i> 
-                      <a href="/neverunresolved/index.html">Start Now</a>
-                    </b>
-                  </button>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <script src="https://kit.fontawesome.com/0ca27f8db1.js" crossorigin="anonymous"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Oi&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Custom styles to apply specific fonts where needed, overriding Tailwind defaults */
+    body {
+      font-family: 'Raleway', sans-serif;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Rubik Spray Paint', cursive; /* Using Rubik Spray Paint for headings */
+      /* If you prefer Oi, change this to font-family: 'Oi', cursive; */
+    }
+    /* Simple animation for new elements, similar to w3-animate-left/top */
+    .animate-fade-in-up {
+      animation: fadeInUp 1s ease-out forwards;
+      opacity: 0;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .delay-100 { animation-delay: 0.1s; }
+    .delay-200 { animation-delay: 0.2s; }
+    .delay-300 { animation-delay: 0.3s; }
+    /* ... add more delays if needed */
+  </style>
+
+  </head>
+<body class="bg-gray-900 text-gray-200 font-sans">
+
+  <div class="max-w-6xl mx-auto px-4 py-8">
+
+    <img src="/blog/img/ftm/Designer.png" loading="lazy" alt="Funtimes Media Banner" class="w-full h-auto rounded-lg shadow-lg mb-8 animate-fade-in-up">
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+      <div class="lg:col-span-2 space-y-8">
+        <div class="bg-white text-gray-900 p-6 rounded-lg shadow-md animate-fade-in-up delay-100">
+          <h3 class="text-2xl font-bold mb-2"><b>Never Unresolved</b></h3>
+          <p class="text-lg text-gray-700 mb-4">Always Keep your Domain Pointed to a Live Website</p>
+          <a href="/neverunresolved/index.html" class="inline-block bg-indigo-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-indigo-700 transition duration-300">
+            <i class="fa-regular fa-hand-point-right mr-2"></i> Start Now
+          </a>
         </div>
-        <!-- END BLOG ENTRY -->
-        <div class="w3-card-4 w3-margin w3-white w3-animate-left">
-          <img src="https://static.madebydanny.uk/img/cloudflare-green.avif" loading="lazy" alt="Failed to reach: cloudflare-cdn.madebydanny.uk" style="width:100%">
-          <div class="w3-container">
-            <h3><b>Going Green</b></h3>
-            <blog-feedback blog-id="5"></blog-feedback>
-            <h5>By <a href="https://madebydanny.uk/startpage" target="_blank">Daniel Morrisey</a>, <span class="w3-opacity">May 30, 2025</span></h5>
-          </div>
-          <div class="w3-container">
-            <p>Funtimes Media has made the switch to use only renewable energy</p>
-            <div class="w3-row">
-              <div class="w3-col m8 s12">
-                <p>
-                  <button class="w3-button w3-padding-large w3-white w3-border">
-                    <b>
-                      <i class="fa-regular fa-hand-point-right"></i> 
-                      <a href="/blog/going-green.html">READ MORE</a>
-                    </b>
-                  </button>
-                </p>
-              </div>
-              <div class="w3-col m4 w3-hide-small">
-                <p>
-                  <span class="w3-padding-small w3-right">
-                    <span class="w3-tag">
-                      <a href="https://publish.buffer.com/compose?text=Going+Green+with+Cloudflare&url=https%3A%2F%2Fmadebydanny.uk%2Fblog%2Fgoing-green"
-                         target="_blank">
-                        <i class="fa-brands fa-buffer"></i>
-                      </a>
-                    </span>
-                    <span class="w3-tag">
-                      <a href="https://bsky.app/intent/compose?text=Going%20Green%20with%20Cloudflare%0Ahttps%3A%2F%2Fbuff.ly%2FaIJnnPe"
-                         target="_blank">
-                        <i class="fa-brands fa-bluesky"></i>
-                      </a>
-                    </span>
-                    <span class="w3-tag">
-                      <a href="https://www.reddit.com/submit?title=Going%20Green%20with%20Cloudflare&url=https%3A%2F%2Fmadebydanny.uk%2Fblog%2Fgoing-green"
-                         target="_blank">
-                        <i class="fa-brands fa-reddit"></i>
-                      </a>
-                    </span>
-                    <span class="w3-tag">
-                      <a href="/copy.html?link=https://madebydanny.uk/blog/going-green" target="_blank">
-                        <i class="fa-solid fa-link"></i>
-                      </a>
-                    </span>
-                    <span class="w3-tag">
-                      <a href="mailto:?subject=Going%20Green%20with%20Cloudflare&body=Learn%20how%20Cloudflare%20is%20making%20the%20Internet%20more%20sustainable!%20Read%20more%20at%20https%3A%2F%2Fmadebydanny.uk" target="_blank">
-                        <i class="fa-regular fa-envelope"></i>
-                      </a>
-                    </span>
-                  </span>
-                </p>
-              </div>
-              <div class="w3-col m4 w3-hide-small">
-                <p>
-                  <span class="w3-padding-large w3-right">
-                    <span class="w3-tag">
-                      <a href="https://raindrop.madebydanny.uk/?add=1&link=https%3A%2F%2Fmadebydanny.uk%2Fblog%2Fgoing-green&title=Going+Green+%2F+Danny%27s+Blog" target="_blank">
-                        Save to raindrop.io
-                      </a>
-                    </span>
-                  </span>
-                </p>
+
+        <div class="bg-white text-gray-900 rounded-lg shadow-md animate-fade-in-up delay-200">
+          <img src="https://static.madebydanny.uk/img/cloudflare-green.avif" loading="lazy" alt="Cloudflare Green Energy" class="w-full h-auto rounded-t-lg">
+          <div class="p-6">
+            <h3 class="text-2xl font-bold mb-2"><b>Going Green</b></h3>
+            <h5 class="text-gray-600 text-sm mb-4">By <a href="https://madebydanny.uk/startpage" target="_blank" class="text-indigo-600 hover:underline">Daniel Morrisey</a>, <span class="opacity-80">May 30, 2025</span></h5>
+            <p class="text-lg text-gray-700 mb-4">Funtimes Media has made the switch to use only renewable energy</p>
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mt-6">
+              <a href="/blog/going-green.html" class="inline-block bg-white border border-indigo-600 text-indigo-600 font-semibold py-2 px-6 rounded-full hover:bg-indigo-50 transition duration-300 mb-4 sm:mb-0">
+                <i class="fa-regular fa-hand-point-right mr-2"></i> READ MORE
+              </a>
+              <div class="flex flex-wrap gap-2 text-gray-700 text-sm">
+                <span class="p-2 bg-gray-100 rounded">
+                  <a href="https://publish.buffer.com/compose?text=Going+Green+with+Cloudflare&url=https%3A%2F%2Fmadebydanny.uk%2Fblog%2Fgoing-green" target="_blank" class="hover:text-indigo-600" title="Share on Buffer">
+                    <i class="fa-brands fa-buffer text-lg"></i>
+                  </a>
+                </span>
+                <span class="p-2 bg-gray-100 rounded">
+                  <a href="https://bsky.app/intent/compose?text=Going%20Green%20with%20Cloudflare%0Ahttps%3A%2F%2Fbuff.ly%2FaIJnnPe" target="_blank" class="hover:text-indigo-600" title="Share on Bluesky">
+                    <i class="fa-brands fa-bluesky text-lg"></i>
+                  </a>
+                </span>
+                <span class="p-2 bg-gray-100 rounded">
+                  <a href="https://www.reddit.com/submit?title=Going%20Green%20with%20Cloudflare&url=https%3A%2F%2Fmadebydanny.uk%2Fblog%2Fgoing-green" target="_blank" class="hover:text-indigo-600" title="Share on Reddit">
+                    <i class="fa-brands fa-reddit text-lg"></i>
+                  </a>
+                </span>
+                <span class="p-2 bg-gray-100 rounded">
+                  <a href="/copy.html?link=https://madeby%madebydanny.uk/blog/going-green" target="_blank" class="hover:text-indigo-600" title="Copy Link">
+                    <i class="fa-solid fa-link text-lg"></i>
+                  </a>
+                </span>
+                <span class="p-2 bg-gray-100 rounded">
+                  <a href="mailto:?subject=Going%20Green%20with%20Cloudflare&body=Learn%20how%20Cloudflare%20is%20making%20the%20Internet%20more%20sustainable!%20Read%20more%20at%20https%3A%2F%2Fmadebydanny.uk" target="_blank" class="hover:text-indigo-600" title="Share via Email">
+                    <i class="fa-regular fa-envelope text-lg"></i>
+                  </a>
+                </span>
+                <span class="p-2 bg-gray-100 rounded hidden sm:inline-block">
+                  <a href="https://raindrop.madebydanny.uk/?add=1&link=https%3A%2F%2Fmadebydanny.uk%2Fblog%2Fgoing-green&title=Going+Green+%2F+Danny%27s+Blog" target="_blank" class="text-sm font-medium hover:text-indigo-600">
+                    Save to raindrop.io
+                  </a>
+                </span>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- END BLOG ENTRIES -->
-      
-      <div class="w3-col l4">
-        <div class="w3-card w3-margin w3-margin-top">
-          <div class="w3-container w3-white">
-            <h4><b>Hello World</b></h4>
-            <p>We’re Funtimes Media a small team of 3 in their late teens!
-            Building websites, products and services for free for planet Earth</p>
-          </div>
+
+      <div class="lg:col-span-1 space-y-8">
+        <div class="bg-white text-gray-900 p-6 rounded-lg shadow-md animate-fade-in-up delay-300">
+          <h4 class="text-xl font-bold mb-2"><b>Hello World</b></h4>
+          <p class="text-gray-700 leading-relaxed">
+            We’re Funtimes Media, a small team of 3 in their late teens! Building websites, products, and services for free for planet Earth.
+          </p>
         </div>
-        <div class="w3-card w3-margin w3-margin-top">
-          <div class="w3-container w3-white">
-            <h4><b><a href="https://wwdc.com" target="_blank">Learn more about WWDC25</a></b></h4>
+
+        <div class="bg-white text-gray-900 rounded-lg shadow-md animate-fade-in-up delay-400">
+          <div class="p-6 pb-2">
+            <h4 class="text-xl font-bold mb-2"><b><a href="https://wwdc.com" target="_blank" class="text-indigo-600 hover:underline">Learn more about WWDC25</a></b></h4>
           </div>
           <a href="https://wwdc.com" target="_blank">
-            <img src="https://static.madebydanny.uk/wwdc25/bafkreicheu44dehczkrdjlg6lmhxannbb3cibkrh6e55d3qrwc24kwvnyi.avif" alt="image failed to load" style="width:100%">
+            <img src="https://static.madebydanny.uk/wwdc25/bafkreicheu44dehczkrdjlg6lmhxannbb3cibkrh6e55d3qrwc24kwvnyi.avif" alt="WWDC25 Logo" class="w-full h-auto rounded-b-lg">
           </a>
         </div>
-        <!-- END Introduction Menu -->
       </div>
-      <!-- END GRID -->
     </div>
-    <br>
   </div>
-  <!-- END w3-content -->
 
-  <!-- Footer -->
-  <footer class="w3-container w3-black w3-padding-32 w3-margin-top">
-    <p>
+  <footer class="bg-gray-950 text-gray-400 py-8 mt-12 text-center">
+    <p class="mb-2">
       &copy; 2024-2029 Made by Danny UK,&nbsp;
-      <i>A <a href="/about/funtimesmedia">Funtimes Media</a> Company</i> / Powered by 
-      <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a><br>
-      Built with <i class="fa-regular fa-heart"></i> &amp; <i class="fa-regular fa-hand-peace"></i> by 
-      <a href="https://madebydanny.uk">Daniel Morrisey</a>, Secured by 
-      <a href="https://www.cloudflare.com/case-studies/">Cloudflare</a>
+      <i>A <a href="/about/funtimesmedia" class="text-indigo-400 hover:text-indigo-300">Funtimes Media</a> Company</i>
     </p>
-  </footer>
+    <p class="mb-2">
+      Built with <i class="fa-regular fa-heart text-red-500"></i> &amp; <i class="fa-regular fa-hand-peace text-blue-400"></i> by
+      <a href="https://madebydanny.uk" class="text-indigo-400 hover:text-indigo-300">Daniel Morrisey</a>, Secured by
+      <a href="https://www.cloudflare.com/case-studies/" target="_blank" class="text-orange-400 hover:text-orange-300">Cloudflare</a>
+    </p>
+    </footer>
 
-  <!-- Statcounter Code -->
   <script type="text/javascript">
-    var sc_project = 13076918; 
-    var sc_invisible = 1; 
-    var sc_security = "cf828171"; 
+    var sc_project = 13076918;
+    var sc_invisible = 1;
+    var sc_security = "cf828171";
   </script>
   <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
   <noscript>
@@ -181,7 +158,5 @@
       </a>
     </div>
   </noscript>
-  <!-- End of Statcounter Code -->
-  
-</body>
+  </body>
 </html>
