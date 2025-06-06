@@ -85,6 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Define your HTML snippet as a template string
   const headerHTML = `
   <!-- Footer -->
+    <img src="https://static.madebydanny.uk/img/Designer.png" alt="Danny's Blog" style="width:100%; height: 100%;">
 <footer class="w3-container w3-red w3-padding-32 w3-margin-top">
   <button class="w3-button w3-white w3-padding-large w3-margin-bottom"><i class="fa-regular fa-hand-point-left"></i> <a href="index.html">Home</a></button>
   <button class="w3-button w3-white w3-padding-large w3-margin-bottom"><i class="fa-regular fa-hand-point-up"></i> <a href="#">Top</a></button>
@@ -161,6 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Define your HTML snippet as a template string
   const headerHTML = `
      <!-- Footer -->
+       <img src="https://static.madebydanny.uk/img/Designer.png" alt="Danny's Blog" style="width:100%; height: 100%;">
 <footer class="w3-container w3-red w3-padding-32 w3-margin-top">
   <button class="w3-button w3-white w3-disabled w3-padding-large w3-margin-bottom"><i class="fa-regular fa-hand-point-left"></i> Previous</button>
   <button class="w3-button w3-white w3-padding-large w3-margin-bottom"><i class="fa-regular fa-hand-point-up"></i> <a href="#">Top</a></button>
