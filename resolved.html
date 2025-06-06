@@ -6,117 +6,207 @@
     <title>Never Unresolved</title>
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
     <link rel="icon" href="favicon.ico" />
-      <script src="https://kit.fontawesome.com/0ca27f8db1.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/0ca27f8db1.js" crossorigin="anonymous"></script>
     <link
       href="https://fonts.googleapis.com/css?family=EB+Garamond:400"
       rel="stylesheet"
     />
+    <!-- Additional font for enhanced pages -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:600"
+      rel="stylesheet"
+    />
     <style type="text/css">
+      /* Root variables based on user's color scheme */
       @media (prefers-color-scheme: light) {
         :root {
           --text-color: #111;
           --background-color: #fff;
         }
       }
-
       @media (prefers-color-scheme: dark) {
         :root {
           --text-color: #fff;
           --background-color: #111;
         }
       }
-
       .light {
         --text-color: #111;
         --background-color: #fff;
       }
-
       .dark {
         --text-color: #fff;
         --background-color: #111;
       }
 
+      /* Global body and main container styles */
       body {
         font-family: "EB Garamond", serif;
         color: var(--text-color);
         background-color: var(--background-color);
-        padding: 0px;
-        margin: 0px;
+        padding: 0;
+        margin: 0;
         height: 100vh;
       }
-
       main {
         height: 100vh;
         padding: 30px;
         box-sizing: border-box;
-
         display: grid;
         justify-content: center;
         align-content: center;
       }
-
+      .page {
+        /* Hidden by default; only the randomly picked one will be displayed */
+        display: none;
+      }
       .intentionally-blank {
-        margin: 0px;
+        margin: 0;
         font-size: 28px;
         font-weight: 400;
       }
 
-      .attribution {
+      /* Attribution block styles */
+      #attribution {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        margin: 0 20px 20px 0;
+        border-radius: 8px;
+        font-size: 12px;
+        background-color: var(--background-color);
+        padding: 6px 12px;
+        display: grid;
+        grid-auto-columns: auto;
+        grid-auto-flow: column;
+        align-items: center;
+        column-gap: 4px;
+      }
+      #attribution .description {
+        display: none;
+      }
+      #attribution:hover {
+        background-color: var(--text-color);
+      }
+      #attribution:hover .description {
+        display: inline-block;
         color: var(--background-color);
+      }
+      #logo {
+        height: 36px;
+        width: 36px;
+      }
+      a {
+        color: black;
+      }
+
+      /* Enhanced design: Gradient page */
+      .gradient-page {
+        background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+        padding: 50px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        text-align: center;
+      }
+      .gradient-page h1 {
+        font-family: "Raleway", sans-serif;
+        font-size: 36px;
+        margin: 0 0 10px;
+      }
+
+      /* Enhanced design: Bold and modern page */
+      .bold-page {
+        background: #2c3e50;
+        color: #ecf0f1;
+        padding: 50px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        text-align: center;
+      }
+      .bold-page h1 {
+        font-family: "Raleway", sans-serif;
+        font-size: 36px;
+        margin: 0 0 10px;
       }
     </style>
   </head>
-
   <body class="light">
     <main>
-        <h1 style="text-align: center;"><i class="fa-solid fa-magnifying-glass"></i></h1>
-      <h1 class="intentionally-blank">This page was intentionally left blank </h1>
+      <!-- Variation 1: Classic minimal design -->
+      <div class="page">
+        <h1 style="text-align: center;">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </h1>
+        <h1 class="intentionally-blank">
+          This page was intentionally left blank
+        </h1>
+      </div>
+
+      <!-- Variation 2: Playful minimal design -->
+      <div class="page">
+        <h1 style="text-align: center;">
+          <i class="fa-solid fa-question"></i>
+        </h1>
+        <h1 class="intentionally-blank">
+          Perhaps there's nothing to see here
+        </h1>
+      </div>
+
+      <!-- Variation 3: Enhanced gradient design -->
+      <div class="page gradient-page">
+        <h1>
+          <i class="fa-solid fa-sun"></i>
+        </h1>
+        <h1 class="intentionally-blank">
+          Embrace the light, even in blank spaces.
+        </h1>
+      </div>
+
+      <!-- Variation 4: Bold and modern design -->
+      <div class="page bold-page">
+        <h1>
+          <i class="fa-solid fa-star"></i>
+        </h1>
+        <h1 class="intentionally-blank">
+          Bold, bright, and beautifully unresolved.
+        </h1>
+      </div>
+
+      <!-- Variation 5: Basic page with a twist -->
+      <div class="page">
+        <h1 style="text-align: center;">
+          <i class="fa-solid fa-circle-notch"></i>
+        </h1>
+        <h1 class="intentionally-blank">
+          Stay simple. Stay mysterious.
+        </h1>
+      </div>
+
+      <!-- Variation 6: Basic info page -->
+      <div class="page">
+        <h1 style="text-align: center;">
+          <i class="fa-solid fa-info"></i>
+        </h1>
+        <h1 class="intentionally-blank">
+          Nothing extraordinary here, just simplicity.
+        </h1>
+      </div>
     </main>
-     
-<style type="text/css">
-  #attribution {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    margin: 0 20px 20px 0;
 
-    border-radius: 8px;
-    font-size: 12px;
-    background-color: var(--background-color);
-    padding: 6px 12px;
+    <script>
+      // Randomly display one of the pages on load
+      document.addEventListener("DOMContentLoaded", function () {
+        const pages = document.querySelectorAll(".page");
+        const randomIndex = Math.floor(Math.random() * pages.length);
+        pages.forEach((page, index) => {
+          page.style.display = index === randomIndex ? "grid" : "none";
+        });
+      });
+    </script>
 
-    display: grid;
-    grid-auto-columns: auto;
-    grid-auto-flow: column;
-    align-items: center;
-    column-gap: 4px;
-  }
-
-  #attribution .description {
-    display: none;
-  }
-
-  #attribution:hover {
-    background-color: var(--text-color);
-  }
-
-  #attribution:hover .description {
-    display: inline-block;
-    color: var(--background-color);
-  }
-
-  #logo {
-    height: 36px;
-    width: 36px;
-  }
-
-a {
-    color: black;
-    }
-</style>
-<div id="attribution">
-Powered by <a href="/neverunresolved/index.html">Never Unresolved</a>
-</div>
- 
+    <!-- Attribution -->
+    <div id="attribution">
+      Powered by <a href="/neverunresolved.html">Never Unresolved</a>
+    </div>
   </body>
 </html>
