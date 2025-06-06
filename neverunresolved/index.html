@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Don't Leave Domains Unresolved</title>
+  <style>
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #2980b9;
+      --text-color: #333;
+      --bg-color: #f9f9f9;
+      --highlight-bg: #eee;
+      --border-color: #ccc;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--bg-color);
+      margin: 0;
+      padding: 0;
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+    header {
+      background: var(--primary-color);
+      padding: 20px;
+      color: #fff;
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1, h2 {
+      color: var(--bg-color);
+    }
+    h2 {
+      margin-top: 30px;
+    }
+    pre {
+      background: var(--highlight-bg);
+      border: 1px solid var(--border-color);
+      padding: 10px;
+      overflow-x: auto;
+    }
+    ol, p {
+      margin-bottom: 1.2em;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 20px;
+    }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 20px;
+      background: var(--primary-color);
+      color: #fff;
+    }
+    a {
+      color: var(--secondary-color);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+  <!-- Option 2: Include external JavaScript to handle client-side redirect -->
+  <script src="https://madebydanny.uk/neverunresolved/api/v1.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Don't Leave Domains Unresolved</h1>
+    <p>Keep your domain always pointing to a live website with these simple solutions!</p>
+  </header>
+  
+  <div class="container">
+    <!-- Option 1: Cloudflare Page Rules -->
+    <section>
+      <h2>Option 1: Redirect via Cloudflare Page Rules</h2>
+      <ol>
+        <li>
+          Log in to your <a href="https://dash.cloudflare.com/" target="_blank">Cloudflare Dashboard</a> and select your domain.
+        </li>
+        <li>
+          Navigate to the <strong>Page Rules</strong> tab.
+        </li>
+        <li>
+          Click on <strong>Create Page Rule</strong>.
+        </li>
+        <li>
+          Enter this URL pattern that matches your domain: <code>*yourdomain.com/*</code>
+        </li>
+        <li>
+          Under settings, choose <strong>Forwarding URL</strong> and select <strong>301 – Permanent Redirect</strong>.
+        </li>
+        <li>
+          Set the destination URL to: <code>https://madebydanny.uk/unresolved</code>
+        </li>
+        <li>
+          Save and deploy your Page Rule.
+        </li>
+      </ol>
+      <img src="img.png" alt="Example of Cloudflare Page Rule configuration">
+      <p>
+        This method configures a server-level redirect that is robust, SEO-friendly, and works regardless of client-side settings.
+      </p>
+    </section>
+
+    <!-- Option 2: External JavaScript File -->
+    <section>
+      <h2>Option 2: Redirect via an External JavaScript File</h2>
+      <ol>
+        <li>
+          In your site's HTML file, add the following one line of code to the <code>&lt;head&gt;</code> section.
+        </li>
+      </ol>
+      <pre>&lt;script src="https://madebydanny.uk/neverunresolved/api/v1.js"&gt;&lt;/script&gt;</pre>
+      <p>
+        This client-side method automatically captures the current URL, encodes it, and appends it as a query parameter before redirecting the visitor.
+      </p>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Never Unresolved. All rights reserved. A <i><a href="href=https://funtimesmedia.uk">Funtimes Media</a></i> company</p>
+  </footer>
+</body>
+</html>

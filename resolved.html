@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Never Unresolved</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link rel="icon" href="favicon.ico" />
+      <script src="https://kit.fontawesome.com/0ca27f8db1.js" crossorigin="anonymous"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=EB+Garamond:400"
+      rel="stylesheet"
+    />
+    <style type="text/css">
+      @media (prefers-color-scheme: light) {
+        :root {
+          --text-color: #111;
+          --background-color: #fff;
+        }
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --text-color: #fff;
+          --background-color: #111;
+        }
+      }
+
+      .light {
+        --text-color: #111;
+        --background-color: #fff;
+      }
+
+      .dark {
+        --text-color: #fff;
+        --background-color: #111;
+      }
+
+      body {
+        font-family: "EB Garamond", serif;
+        color: var(--text-color);
+        background-color: var(--background-color);
+        padding: 0px;
+        margin: 0px;
+        height: 100vh;
+      }
+
+      main {
+        height: 100vh;
+        padding: 30px;
+        box-sizing: border-box;
+
+        display: grid;
+        justify-content: center;
+        align-content: center;
+      }
+
+      .intentionally-blank {
+        margin: 0px;
+        font-size: 28px;
+        font-weight: 400;
+      }
+
+      .attribution {
+        color: var(--background-color);
+      }
+    </style>
+  </head>
+
+  <body class="light">
+    <main>
+        <h1 style="text-align: center;"><i class="fa-solid fa-magnifying-glass"></i></h1>
+      <h1 class="intentionally-blank">This page was intentionally left blank </h1>
+    </main>
+     
+<style type="text/css">
+  #attribution {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 0 20px 20px 0;
+
+    border-radius: 8px;
+    font-size: 12px;
+    background-color: var(--background-color);
+    padding: 6px 12px;
+
+    display: grid;
+    grid-auto-columns: auto;
+    grid-auto-flow: column;
+    align-items: center;
+    column-gap: 4px;
+  }
+
+  #attribution .description {
+    display: none;
+  }
+
+  #attribution:hover {
+    background-color: var(--text-color);
+  }
+
+  #attribution:hover .description {
+    display: inline-block;
+    color: var(--background-color);
+  }
+
+  #logo {
+    height: 36px;
+    width: 36px;
+  }
+
+a {
+    color: black;
+    }
+</style>
+<div id="attribution">
+Powered by <a href="/neverunresolved/index.html">Never Unresolved</a>
+</div>
+ 
+  </body>
+</html>
