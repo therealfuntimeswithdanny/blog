@@ -84,15 +84,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Define your HTML snippet as a template string
   const headerHTML = `
-  <!-- Footer -->
-    <img src="https://static.madebydanny.uk/img/Designer.png" alt="Danny's Blog" style="width:100%; height: 100%;">
-<footer class="w3-container w3-red w3-padding-32 w3-margin-top">
-  <button class="w3-button w3-white w3-padding-large w3-margin-bottom"><i class="fa-regular fa-hand-point-left"></i> <a href="index.html">Home</a></button>
-  <button class="w3-button w3-white w3-padding-large w3-margin-bottom"><i class="fa-regular fa-hand-point-up"></i> <a href="#">Top</a></button>
-  <p>&copy; 2024-2029 Made by Danny UK, <i>A <a href="/about/funtimesmedia">Funtimes Media</a> Company </i>/ Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a><br>
-  Built with <i class="fa-regular fa-heart"></i> & <i class="fa-regular fa-hand-peace"></i> by <a href="https://madebydanny.uk">Daniel Morrisey</a>, Secured by <a href="https://www.cloudflare.com/case-studies/">Cloudflare</a> / <a href="https://status.madebydanny.uk">Site Status</a> / <a href="/tos.html">TOS</a><br>Get updates, news, announcements and more on <a href="https://bsky.app/profile/madebydanny.uk">our Bluesky</a><br>
-  <a href="/rss"><i class="fa-solid fa-rss"></i></a> / <a href="/startpage"><i class="fa-brands fa-buffer"></i></a> / <a href="https://bsky.app/profile/madebydanny.uk"><i class="fa-brands fa-bluesky"></i></a> / <a href="https://github.com/therealfuntimeswithdanny"><i class="fa-brands fa-github"></i></a></p>
-  <info></info>
+<footer class="bg-gray-800 text-gray-400 mt-16">
+        <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center text-sm">
+            <p>&copy; 2024-2029 Made by Danny UK, a <a href="/about/funtimesmedia" class="font-semibold hover:text-white">Funtimes Media</a> Company.</p>
+            <p class="mt-1">Built with <a href="https://tailwindcss.com/" target="_blank" rel="noopener" class="font-semibold hover:text-white">Tailwind CSS</a> &bull; Hosted on <a href="https://www.cloudflare.com/" target="_blank" rel="noopener" class="font-semibold hover:text-white">Cloudflare</a></p>
+        </div>
 </footer>
   `;
 
