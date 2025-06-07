@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes Editor</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Quill.js CSS -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Light gray background */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align to the top, not center vertically */
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .main-layout {
+            display: flex;
+            width: 100%;
+            max-width: 1200px; /* Increased max-width for sidebar */
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            overflow: hidden; /* Ensures rounded corners are respected */
+        }
+        .sidebar {
+            width: 280px; /* Fixed width for sidebar */
+            background-color: #f9fafb; /* Lighter background for sidebar */
+            padding: 20px;
+            border-right: 1px solid #e5e7eb; /* Light border */
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            overflow-y: auto; /* Scrollable sidebar */
+        }
+        .editor-section {
+            flex-grow: 1;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .editor-header {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .editor-button {
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap; /* Prevent button text from wrapping */
+        }
+        .editor-button:hover {
+            transform: translateY(-1px);
+        }
+        .primary-button {
+            background-color: #4f46e5; /* Indigo-600 */
+            color: #ffffff;
+        }
+        .primary-button:hover {
+            background-color: #4338ca; /* Indigo-700 */
+        }
+        .secondary-button {
+            background-color: #e0e7ff; /* Indigo-100 */
+            color: #4f46e5; /* Indigo-600 */
+        }
+        .secondary-button:hover {
+            background-color: #c7d2fe; /* Indigo-200 */
+        }
+        /* Quill Editor specific styling */
+        #editor-container {
+            flex-grow: 1; /* Allow editor to take available space */
+            min-height: 400px; /* Set a minimum height */
+            display: flex;
+            flex-direction: column;
+        }
+        #editor {
+            flex-grow: 1;
+            background-color: #ffffff;
+            border: 1px solid #d1d5db; /* Gray-300 */
+            border-radius: 8px; /* Apply border-radius to editor */
+            overflow: hidden; /* Contains toolbar and editor area within rounded corners */
+        }
+        .ql-toolbar {
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            border-bottom: 1px solid #d1d5db !important; /* Ensure separation */
+        }
+        .ql-container {
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            min-height: calc(100% - 42px); /* Adjust based on toolbar height */
+            border: none !important; /* Remove internal border */
+        }
+        .ql-editor {
+            min-height: 350px; /* Ensure editor area has minimum height */
+            font-size: 1rem;
+            line-height: 1.5;
+            padding: 16px;
+        }
+
+        /* Message Box for notifications */
+        .message-box {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4caf50; /* Green */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .message-box.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Custom Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .modal-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-content {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+            animation: modalPop 0.3s ease-out forwards;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        @keyframes modalPop {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .modal-close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #6b7280; /* Gray-500 */
+        }
+        .modal-close-btn:hover {
+            color: #374151; /* Gray-700 */
+        }
+        .modal-buttons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        /* Note List Styling */
+        .note-list-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s, box-shadow 0.2s;
+            word-break: break-all; /* Prevent long titles from breaking layout */
+            line-height: 1.3;
+        }
+        .note-list-item:hover {
+            background-color: #f1f5f9; /* Light hover */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        .note-list-item.active {
+            background-color: #e0e7ff; /* Indigo-100 */
+            color: #4f46e5; /* Indigo-600 */
+            font-weight: 600;
+        }
+        .note-list-item-title {
+            flex-grow: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: calc(100% - 30px); /* Adjust for delete button */
+        }
+        .note-delete-btn {
+            background: none;
+            border: none;
+            color: #ef4444; /* Red-500 */
+            font-size: 1rem;
+            margin-left: 10px;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+        .note-delete-btn:hover {
+            background-color: #fee2e2; /* Red-100 */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .main-layout {
+                flex-direction: column;
+                max-width: 100%;
+                margin: 0;
+                padding: 0; /* Remove container padding for full width */
+                border-radius: 0; /* Remove border-radius on small screens for full width */
+            }
+            .sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid #e5e7eb;
+                padding: 15px;
+            }
+            .editor-section {
+                padding: 15px;
+            }
+            body {
+                padding: 0;
+            }
+            .editor-header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .editor-button {
+                width: 100%;
+                justify-content: center;
+            }
+            .modal-content {
+                width: 95%;
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-layout">
+        <!-- Sidebar for notes list -->
+        <div class="sidebar">
+            <h2 class="text-2xl font-bold text-gray-800 text-center">My Notes</h2>
+            <button id="newNoteBtn" class="editor-button primary-button w-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
+                </svg>
+                New Note
+            </button>
+            <div id="noteList" class="flex flex-col gap-2">
+                <!-- Notes will be dynamically loaded here -->
+            </div>
+        </div>
+
+        <!-- Main Editor Section -->
+        <div class="editor-section">
+            <h1 class="text-3xl font-bold text-gray-800 text-center">Notes Editor</h1>
+
+            <div class="editor-header">
+                <button id="downloadBtn" class="editor-button primary-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L10 11.586l2.293-2.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414zM10 3a1 1 0 011 1v7a1 1 0 11-2 0V4a1 1 0 011-1z" clip-rule="evenodd" />
+                    </svg>
+                    Download Note
+                </button>
+                <button id="clearBtn" class="editor-button secondary-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M9 2a1 1 0 00-1 1v14a1 1 0 001 1h2a1 1 0 001-1V3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                        <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
+                    </svg>
+                    Clear Current Note
+                </button>
+            </div>
+
+            <!-- Quill Editor Container -->
+            <div id="editor-container">
+                <div id="editor">
+                    <!-- Quill editor will be initialized here -->
+                </div>
+            </div>
+            <!-- Message Box for notifications -->
+            <div id="messageBox" class="message-box"></div>
+        </div>
+    </div>
+
+    <!-- Custom Confirmation Modal -->
+    <div id="confirmationModal" class="modal-overlay">
+        <div class="modal-content">
+            <h3 class="text-xl font-semibold text-gray-800" id="confirmationModalTitle">Confirm Action</h3>
+            <p id="confirmationModalMessage" class="text-gray-600">Are you sure you want to proceed?</p>
+            <div class="modal-buttons">
+                <button id="cancelModalBtn" class="editor-button secondary-button">Cancel</button>
+                <button id="confirmModalBtn" class="editor-button primary-button">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quill.js JS -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <!-- UUID generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"></script>
+
+    <script>
+        // Global variables for Firebase and App ID (provided by the environment)
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-notes-app-id';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : null;
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+        // Element references
+        const noteListDiv = document.getElementById('noteList');
+        const newNoteBtn = document.getElementById('newNoteBtn');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const clearBtn = document.getElementById('clearBtn');
+        const messageBox = document.getElementById('messageBox');
+
+        // Modal elements
+        const confirmationModal = document.getElementById('confirmationModal');
+        const confirmationModalTitle = document.getElementById('confirmationModalTitle');
+        const confirmationModalMessage = document.getElementById('confirmationModalMessage');
+        const cancelModalBtn = document.getElementById('cancelModalBtn');
+        const confirmModalBtn = document.getElementById('confirmModalBtn');
+
+        // Quill editor initialization
+        const quill = new Quill('#editor', {
+            theme: 'snow', // 'snow' or 'bubble'
+            modules: {
+                toolbar: [
+                    [{ 'font': [] }, { 'size': ['small', false, 'large', 'huge'] }],
+                    ['bold', 'italic', 'underline', 'strike'],
+                    [{ 'color': [] }, { 'background': [] }],
+                    [{ 'script': 'sub' }, { 'script': 'super' }],
+                    [{ 'header': 1 }, { 'header': 2 }, 'blockquote', 'code-block'],
+                    [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+                    [{ 'indent': '-1' }, { 'indent': '+1' }],
+                    [{ 'direction': 'rtl' }],
+                    [{ 'align': [] }],
+                    ['link', 'image'],
+                    ['clean']
+                ],
+                history: {
+                    delay: 2000,
+                    maxStack: 500,
+                    userOnly: true
+                }
+            }
+        });
+
+        // Application state
+        let notes = []; // Array of { id: string, title: string, content: Quill.Delta }
+        let currentNoteId = null;
+        const LOCAL_STORAGE_NOTES_KEY = `notesEditor_notes_${appId}`; // Unique key per app instance
+
+        /**
+         * Displays a temporary message box with a given message.
+         * @param {string} message - The message to display.
+         * @param {string} type - The type of message (e.g., 'success', 'error', 'info'). Affects background color.
+         */
+        function showMessageBox(message, type = 'success') {
+            messageBox.textContent = message;
+            if (type === 'success') {
+                messageBox.style.backgroundColor = '#4caf50'; // Green
+            } else if (type === 'error') {
+                messageBox.style.backgroundColor = '#f44336'; // Red
+            } else if (type === 'info') {
+                messageBox.style.backgroundColor = '#2196f3'; // Blue
+            } else {
+                messageBox.style.backgroundColor = '#607d8b'; // Gray for default/other
+            }
+
+            messageBox.classList.add('show');
+            setTimeout(() => {
+                messageBox.classList.remove('show');
+            }, 3000); // Hide after 3 seconds
+        }
+
+        /**
+         * Shows a generic confirmation modal.
+         * @param {string} title - The title of the modal.
+         * @param {string} message - The message to display in the modal.
+         * @returns {Promise<boolean>} - Resolves true if confirmed, false if cancelled.
+         */
+        function showConfirmationModal(title, message) {
+            return new Promise((resolve) => {
+                confirmationModalTitle.textContent = title;
+                confirmationModalMessage.textContent = message;
+                confirmationModal.classList.add('show');
+
+                const handleConfirm = () => {
+                    confirmationModal.classList.remove('show');
+                    confirmModalBtn.removeEventListener('click', handleConfirm);
+                    cancelModalBtn.removeEventListener('click', handleCancel);
+                    resolve(true);
+                };
+
+                const handleCancel = () => {
+                    confirmationModal.classList.remove('show');
+                    confirmModalBtn.removeEventListener('click', handleConfirm);
+                    cancelModalBtn.removeEventListener('click', handleCancel);
+                    resolve(false);
+                };
+
+                confirmModalBtn.addEventListener('click', handleConfirm);
+                cancelModalBtn.addEventListener('click', handleCancel);
+            });
+        }
+
+        /**
+         * Generates a unique ID (UUID).
+         * @returns {string} A unique ID.
+         */
+        function generateUniqueId() {
+            return uuid.v4(); // Uses the uuid.js library
+        }
+
+        /**
+         * Saves all notes to local storage.
+         */
+        function saveNotes() {
+            try {
+                localStorage.setItem(LOCAL_STORAGE_NOTES_KEY, JSON.stringify(notes));
+                // showMessageBox('Notes saved automatically!', 'success'); // Too frequent for autosave
+            } catch (error) {
+                console.error("Error saving notes to local storage:", error);
+                showMessageBox('Error saving notes. Local storage might be full or inaccessible.', 'error');
+            }
+        }
+
+        /**
+         * Loads all notes from local storage.
+         */
+        function loadNotes() {
+            try {
+                const savedNotes = localStorage.getItem(LOCAL_STORAGE_NOTES_KEY);
+                if (savedNotes) {
+                    notes = JSON.parse(savedNotes);
+                } else {
+                    notes = []; // Initialize empty array if no notes found
+                }
+                renderNoteList();
+                // Load the first note if available, otherwise create a new one
+                if (notes.length > 0) {
+                    loadNoteIntoEditor(notes[0].id);
+                } else {
+                    createNewNote(false); // Create a new empty note if none exist, don't auto-focus
+                }
+            } catch (error) {
+                console.error("Error loading notes from local storage:", error);
+                showMessageBox('Error loading notes. Data might be corrupted or permissions are off.', 'error');
+                notes = []; // Reset notes on error
+                renderNoteList();
+                createNewNote(false);
+            }
+        }
+
+        /**
+         * Renders the list of notes in the sidebar.
+         */
+        function renderNoteList() {
+            noteListDiv.innerHTML = ''; // Clear existing list
+            if (notes.length === 0) {
+                noteListDiv.innerHTML = '<p class="text-gray-500 text-center text-sm">No notes yet. Click "New Note" to create one.</p>';
+                return;
+            }
+
+            notes.forEach(note => {
+                const noteItem = document.createElement('div');
+                noteItem.className = `note-list-item ${note.id === currentNoteId ? 'active' : ''}`;
+                noteItem.dataset.noteId = note.id;
+
+                const noteTitle = document.createElement('span');
+                noteTitle.className = 'note-list-item-title';
+                noteTitle.textContent = note.title || 'Untitled Note';
+                noteTitle.title = note.title || 'Untitled Note'; // Tooltip for full title
+
+                const deleteButton = document.createElement('button');
+                deleteButton.className = 'note-delete-btn';
+                deleteButton.innerHTML = '&times;'; // 'x' icon
+                deleteButton.title = 'Delete Note';
+
+                // Event listener for loading note
+                noteTitle.addEventListener('click', (event) => {
+                    event.stopPropagation(); // Prevent delete button from triggering this
+                    loadNoteIntoEditor(note.id);
+                });
+
+                // Event listener for deleting note
+                deleteButton.addEventListener('click', async (event) => {
+                    event.stopPropagation(); // Prevent loading note when clicking delete
+                    const confirmed = await showConfirmationModal(
+                        'Delete Note',
+                        `Are you sure you want to delete "${note.title || 'Untitled Note'}"? This action cannot be undone.`
+                    );
+                    if (confirmed) {
+                        deleteNote(note.id);
+                    }
+                });
+
+                noteItem.appendChild(noteTitle);
+                noteItem.appendChild(deleteButton);
+                noteListDiv.appendChild(noteItem);
+            });
+        }
+
+        /**
+         * Loads a specific note into the Quill editor.
+         * @param {string} id - The ID of the note to load.
+         */
+        function loadNoteIntoEditor(id) {
+            const noteToLoad = notes.find(note => note.id === id);
+            if (noteToLoad) {
+                try {
+                    // Save current note before loading a new one if it exists and is not empty
+                    if (currentNoteId && quill.getText().trim() !== '') {
+                        const currentNoteIndex = notes.findIndex(n => n.id === currentNoteId);
+                        if (currentNoteIndex !== -1) {
+                            notes[currentNoteIndex].content = quill.getContents();
+                            notes[currentNoteIndex].title = getNoteTitle(quill.getText());
+                        }
+                    }
+
+                    quill.setContents(noteToLoad.content);
+                    currentNoteId = id;
+                    renderNoteList(); // Update active state in sidebar
+                    showMessageBox(`"${noteToLoad.title || 'Untitled Note'}" loaded.`, 'success');
+                } catch (e) {
+                    console.error("Error setting Quill content:", e);
+                    showMessageBox("Error loading note content. It might be corrupted.", "error");
+                    // Optionally, clear the editor or create a new note
+                    quill.setText('');
+                }
+            } else {
+                showMessageBox('Note not found!', 'error');
+            }
+        }
+
+        /**
+         * Creates a new empty note and loads it into the editor.
+         * @param {boolean} focusEditor - Whether to focus the editor after creating the note.
+         */
+        function createNewNote(focusEditor = true) {
+            // Save current note if it exists and is not empty
+            if (currentNoteId && quill.getText().trim() !== '') {
+                const currentNoteIndex = notes.findIndex(n => n.id === currentNoteId);
+                if (currentNoteIndex !== -1) {
+                    notes[currentNoteIndex].content = quill.getContents();
+                    notes[currentNoteIndex].title = getNoteTitle(quill.getText());
+                }
+            }
+
+            const newId = generateUniqueId();
+            const newNote = {
+                id: newId,
+                title: 'New Note',
+                content: quill.clipboard.convert('') // Empty Delta
+            };
+            notes.unshift(newNote); // Add to the beginning of the list
+            currentNoteId = newId;
+
+            quill.setContents(newNote.content); // Clear editor
+            renderNoteList();
+            saveNotes();
+            showMessageBox('New note created!', 'success');
+            if (focusEditor) {
+                quill.focus();
+            }
+        }
+
+        /**
+         * Deletes a note from the list.
+         * @param {string} id - The ID of the note to delete.
+         */
+        function deleteNote(id) {
+            const deletedNoteTitle = notes.find(n => n.id === id)?.title || 'Untitled Note';
+            notes = notes.filter(note => note.id !== id);
+            saveNotes();
+            renderNoteList();
+            showMessageBox(`Note "${deletedNoteTitle}" deleted.`, 'info');
+
+            // If the deleted note was the current one, load another or create new
+            if (currentNoteId === id) {
+                if (notes.length > 0) {
+                    loadNoteIntoEditor(notes[0].id);
+                } else {
+                    createNewNote(false);
+                }
+            }
+        }
+
+        /**
+         * Extracts a title from the note content.
+         * Uses the first non-empty line.
+         * @param {string} textContent - The plain text content of the note.
+         * @returns {string} The derived title.
+         */
+        function getNoteTitle(textContent) {
+            const firstLine = textContent.split('\n')[0].trim();
+            return firstLine.substring(0, 50) || 'Untitled Note'; // Max 50 chars for title
+        }
+
+        /**
+         * Clears the content of the current note in the editor.
+         */
+        async function clearCurrentNote() {
+            const confirmed = await showConfirmationModal(
+                'Clear Current Note',
+                'Are you sure you want to clear the content of the current note? This action cannot be undone.'
+            );
+            if (confirmed) {
+                quill.setText('');
+                // Update the title of the current note after clearing
+                if (currentNoteId) {
+                    const currentNote = notes.find(n => n.id === currentNoteId);
+                    if (currentNote) {
+                        currentNote.title = 'Untitled Note';
+                        currentNote.content = quill.getContents(); // Save empty content
+                    }
+                }
+                saveNotes();
+                renderNoteList(); // Update sidebar title
+                showMessageBox('Current note cleared!', 'success');
+            }
+        }
+
+        /**
+         * Downloads the current note as a text file.
+         */
+        function downloadCurrentNote() {
+            const content = quill.getText();
+            if (!content.trim()) {
+                showMessageBox('No content to download!', 'info');
+                return;
+            }
+            const noteTitle = getNoteTitle(content);
+            const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = `${noteTitle.replace(/[^a-zA-Z0-9]/g, '_') || 'my_note'}.txt`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(link.href);
+            showMessageBox('Note downloaded!', 'success');
+        }
+
+        // --- Event Listeners ---
+
+        // Load notes on window load
+        window.addEventListener('load', () => {
+            loadNotes();
+        });
+
+        // Autosave current note content and update title on editor change
+        quill.on('text-change', () => {
+            if (currentNoteId) {
+                const currentNote = notes.find(n => n.id === currentNoteId);
+                if (currentNote) {
+                    currentNote.content = quill.getContents(); // Save as Delta
+                    currentNote.title = getNoteTitle(quill.getText());
+                    saveNotes(); // Save all notes
+                    renderNoteList(); // Update the title in the sidebar
+                }
+            }
+        });
+
+        // Buttons
+        newNoteBtn.addEventListener('click', () => createNewNote());
+        downloadBtn.addEventListener('click', downloadCurrentNote);
+        clearBtn.addEventListener('click', clearCurrentNote);
+    </script>
+</body>
+</html>
