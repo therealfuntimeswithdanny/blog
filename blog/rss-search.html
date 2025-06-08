@@ -11,73 +11,103 @@
 <meta property="og:type" content="website">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Configure Tailwind to use 'Inter' font for body and headings -->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+</style>
 <script src="https://kit.fontawesome.com/0ca27f8db1.js" crossorigin="anonymous"></script>
 <script src="script.js"></script>
-<style>
-body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
-</style>
 </head>
-<body class="w3-light-grey">
+<body class="bg-gray-100 font-inter">
 
-<!-- w3-content defines a container for fixed size centered content, 
-and is wrapped around the whole page content, except for the footer in this example -->
-<div class="w3-content" style="max-width:1400px">
+<!-- Defines a container for fixed size centered content -->
+<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
 <!-- Header -->
-<header class="w3-container w3-center w3-padding-32"> 
-  <h1><b><i class="fa-regular fa-hand-peace"></i></b></h1>
-  <p><span class="w3-tag">Danny Morrisey</span></p>
+<header class="container mx-auto text-center py-8"> 
+  <h1 class="text-5xl font-bold mb-4"><b><i class="fa-regular fa-hand-peace"></i></b></h1>
+  <p><span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm">Danny Morrisey</span></p>
 </header>
 
 <!-- Grid -->
-<div class="w3-row">
+<div class="flex flex-wrap -mx-4">
 
 <!-- Blog entries -->
-<div class="w3-col l8 s12">
+<div class="w-full lg:w-8/12 px-4">
 
   <!-- Blog entry -->
-  <div class="w3-card-4 w3-margin w3-white">
-  <img src="img/https___dev-to-uploads.s3.amazonaws.com_uploads_articles_a241qbegobyh3e4e9eq9.webp" load="lazy" alt="Failed to reach: cloudflare-cdn.madebydanny.uk" style="width:100%">
-    <div class="w3-container">
-      <h3><b>Is RSS a new way to search?</b></h3>
-      <h5>By <a href="https://madebydanny.uk/startpage"target="_blank">Daniel Morrisey</a>, <span class="w3-opacity">Jun 3, 2025</span></h5>
-      <p><span class="w3-padding-small w3-left"><b>Share </b><span class="w3-tag"><a href="https://www.reddit.com/submit?title=Is%20RSS%20a%20New%20Way%20to%20Search&url=https%3A%2F%2Fmadebydanny.uk%2Fblog%2Frss-search"target="_blank"><i class="fa-brands fa-reddit"></i></a></span> <span class="w3-tag"><a href="https://publish.buffer.com/compose?text=Is+RSS+a+new+way+to+search%3F+%2F+Danny%27s+Blog&url=https%3A%2F%2Fmadebydanny.uk%2Fblog%2Frss-search&picture=https%3A%2F%2Fmadebydanny.uk%2Fblog%2Fimg%2Fhttps___dev-to-uploads.s3.amazonaws.com_uploads_articles_a241qbegobyh3e4e9eq9.webp&placement=hover_button_image"target="_blank"><i class="fa-brands fa-buffer"></i></a></span> <span class="w3-tag"><a href="https://bsky.app/intent/compose?text=Is%20RSS%20a%20new%20way%20to%20search%3F%0Ahttps%3A%2F%2Fmadebydanny.uk%2Fblog%2Frss-search"><i class="fa-brands fa-bluesky"target="_blank"></i></a></span> <span class="w3-tag"><a href="/copy.html?link=https://madebydanny.uk/blog/rss-search" target="_blank"><i class="fa-solid fa-link"></i></a></span> <span class="w3-tag"><a href="mailto:recipient@example.com?subject=Is%20RSS%20a%20New%20Way%20to%20Search%3F&body=Read%20more%20about%20RSS%20and%20its%20potential%20as%20a%20search%20tool%20at%20https%3A%2F%2Fmadebydanny.uk%2Fblog%2Frss-search" target="_blank"><i class="fa-regular fa-envelope"></i></a></span></span></p>
-      <p><span class="w3-padding-small w3-left"><span class="w3-tag"><a href="https://raindrop.madebydanny.uk/?add=1&link=https%3A%2F%2Fmadebydanny.uk%2Fblog%2Frss-search&title=Is+RSS+a+new+way+to+search%3F"target="_blank">Save to raindrop.io</a></span></p>
-      <br><comments></comments>   
+  <div class="bg-white shadow-lg rounded-lg overflow-hidden mb-8">
+    <img src="/blog/img/https___dev-to-uploads.s3.amazonaws.com_uploads_articles_a241qbegobyh3e4e9eq9.webp" loading="lazy" alt="Failed to reach: cloudflare-cdn.madebydanny.uk" class="w-full h-auto object-cover rounded-t-lg">
+    <div class="p-6">
+      <h3 class="text-2xl font-bold mb-2"><b>Is RSS a new way to search?</b></h3>
+      <h5 class="text-gray-600 text-sm mb-4">By <a href="https://madebydanny.uk/startpage" target="_blank" class="text-blue-600 hover:underline">Daniel Morrisey</a>, <span class="text-gray-500">Jun 3, 2025</span></h5>
+      <p class="mb-4">
+        <span class="inline-block text-left mr-2"><b>Share </b>
+          <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded-md text-xs mr-1">
+            <a href="https://www.reddit.com/submit?title=Is%20RSS%20a%20New%20Way%20to%20Search&url=https%3A%2F%2Fmadebydanny.uk%2Fblog%2Frss-search" target="_blank"><i class="fa-brands fa-reddit"></i></a>
+          </span> 
+          <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded-md text-xs mr-1">
+            <a href="https://publish.buffer.com/compose?text=Is+RSS+a+new+way+to+search%3F+%2F+Danny%27s+Blog&url=https%3A%2F%2Fmadeby%3A//madebydanny.uk%2Fblog%2Frss-search&picture=https%3A%2F%2Fmadebydanny.uk%2Fblog%2Fimg%2Fhttps___dev-to-uploads.s3.amazonaws.com_uploads_articles_a241qbegobyh3e4e9eq9.webp&placement=hover_button_image" target="_blank"><i class="fa-brands fa-buffer"></i></a>
+          </span> 
+          <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded-md text-xs mr-1">
+            <a href="https://bsky.app/intent/compose?text=Is%20RSS%20a%20new%20way%20to%20search%3F%0Ahttps%3A%2F%2Fmadebydanny.uk%2Fblog%2Frss-search" target="_blank"><i class="fa-brands fa-bluesky"></i></a>
+          </span> 
+          <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded-md text-xs mr-1">
+            <a href="/copy.html?link=https://madebydanny.uk/blog/rss-search" target="_blank"><i class="fa-solid fa-link"></i></a>
+          </span> 
+          <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded-md text-xs">
+            <a href="mailto:recipient@example.com?subject=Is%20RSS%20a%20New%20Way%20to%20Search%3F&body=Read%20more%20about%20RSS%20and%20its%20potential%20as%20a%20search%20tool%20at%20https%3A%2F%2Fmadebydanny.uk%2Fblog%2Frss-search" target="_blank"><i class="fa-regular fa-envelope"></i></a>
+          </span>
+        </span>
+      </p>
+      <p class="mb-4">
+        <span class="inline-block text-left">
+          <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-md text-sm">
+            <a href="https://raindrop.madebydanny.uk/?add=1&link=https%3A%2F%2Fmadebydanny.uk%2Fblog%2Frss-search&title=Is+RSS+a+new+way+to+search%3F" target="_blank">Save to raindrop.io</a>
+          </span>
+        </span>
+      </p>
+      <comments></comments>   
       <blog-feedback blog-id="6"></blog-feedback> 
     </div>
 
-    <div class="w3-container">
-      <p>
-With searching the web becoming a hot mess of AI overview that are wrong and hundreds of ads that don’t help is RSS a new way to search.
-<br><br>
-Believe it or not people do, most news outlets have a RSS feed and most developers that own blogs or podcast probably do have a RSS Feed, me for example I have one (<i><a href="madebydanny.uk/RSS">madebydanny.uk/RSS</a></i>).
-But you can’t search for RSS feeds and most RSS feeds are XML so it’s just a bunch of Text to a non developer. But that can change services like Feedle (<i><a href="https://feedle.world">feedle.world</a></i>) turn that Plain text into a nice easy to use interface with a search bar and everything. 
-<br><br>
-This lets you find new RSS feeds for your favourite blogs, podcasts and news outlets. Without stupid AI overviews that are wrong and ads that don’t help. All with a easy to use intrface!
-</p>
-      <div class="w3-row">
+    <div class="p-6">
+      <p id="blog-content" class="leading-relaxed text-gray-700">
+        With searching the web becoming a hot mess of AI overview that are wrong and hundreds of ads that don’t help, is RSS a new way to search?
+        <br><br>
+        Believe it or not, people do. Most news outlets have an RSS feed, and most developers that own blogs or podcasts probably do have an RSS Feed; me, for example, I have one (<i><a href="madebydanny.uk/RSS" class="text-blue-600 hover:underline">madebydanny.uk/RSS</a></i>).
+        But you can’t search for RSS feeds, and most RSS feeds are XML, so it’s just a bunch of text to a non-developer. But that can change; services like Feedle (<i><a href="https://feedle.world" class="text-blue-600 hover:underline">feedle.world</a></i>) turn that plain text into a nice, easy-to-use interface with a search bar and everything. 
+        <br><br>
+        This lets you find new RSS feeds for your favorite blogs, podcasts, and news outlets. Without stupid AI overviews that are wrong and ads that don’t help. All with an easy-to-use interface!
+      </p>
+      <div class="flex flex-wrap items-center mt-6">
         <p id="comments"></p>
-          <script src="https://giscus.app/client.js"
-        data-repo="therealfuntimeswithdanny/blog"
-        data-repo-id="R_kgDOOnYZgg"
-        data-category="Announcements"
-        data-category-id="DIC_kwDOOnYZgs4Cp-Lb"
-        data-mapping="og:title"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="light"
-        data-lang="en"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
-</script>
-        <div class="w3-col m8 s12">
-          <p><button class="w3-button w3-padding-large w3-white w3-border"><b><i class="fa-regular fa-hand-point-up"></i> <a href="#">Back to Top </a></b></button></p>
+        <script src="https://giscus.app/client.js"
+              data-repo="therealfuntimeswithdanny/blog"
+              data-repo-id="R_kgDOOnYZgg"
+              data-category="Announcements"
+              data-category-id="DIC_kwDOOnYZgs4Cp-Lb"
+              data-mapping="og:title"
+              data-strict="0"
+              data-reactions-enabled="1"
+              data-emit-metadata="0"
+              data-input-position="top"
+              data-theme="light"
+              data-lang="en"
+              crossorigin="anonymous"
+              async>
+        </script>
+        <div class="w-full sm:w-8/12">
+          <p class="mt-4">
+            <button class="bg-white border border-gray-300 text-gray-800 px-6 py-3 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
+              <b><i class="fa-regular fa-hand-point-up"></i> <a href="#" class="no-underline text-gray-800 hover:text-gray-800">Back to Top </a></b>
+            </button>
+          </p>
         </div>
       </div>
     </div>
@@ -85,17 +115,80 @@ This lets you find new RSS feeds for your favourite blogs, podcasts and news out
 <!-- END BLOG ENTRIES -->
 </div>
 
-<side-bar></side-bar>
+<!-- Sidebar -->
+<div class="w-full lg:w-4/12 px-4">
+    <!-- Summarize Post Button - Moved to Sidebar -->
+    <div class="bg-white shadow-lg rounded-lg overflow-hidden mb-8 p-6 text-center">
+        <button id="summarize-button" class="bg-blue-600 text-white px-6 py-3 rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out w-full">
+            <b>Summarize Post ✨</b>
+        </button>
+
+        <!-- Loading Indicator - Moved to Sidebar -->
+        <div id="loading-indicator" class="mt-4 text-center text-blue-600 hidden">
+            <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 inline-block"></div>
+            <p>Generating summary...</p>
+        </div>
+
+        <!-- Summary Section - Moved to Sidebar -->
+        <div id="summary-section" class="mt-8 p-6 bg-blue-50 border-l-4 border-blue-400 text-blue-800 rounded-lg hidden">
+            <h4 class="text-lg font-bold mb-2">Summary:</h4>
+            <p id="summary-content" class="mb-4"></p>
+            <p class="text-xs text-gray-600 mt-2">Powered by Google Gemini</p>
+            <button id="clear-summary-button" class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition duration-150 ease-in-out">
+              Clear Summary
+            </button>
+        </div>
+    </div>
+
+    <!-- About the Author Section -->
+    <div class="bg-white shadow-lg rounded-lg overflow-hidden mb-8">
+        <div class="p-6">
+            <h4 class="text-xl font-bold mb-4">About the Author</h4>
+            <div class="flex items-center mb-4">
+                <img src="https://cdn.bsky.app/img/avatar/plain/did:plc:tnnl6qjjj4lquabzmsuu34ip/bafkreifisvw5bxswgjqbvhy3bxqbv62djfp27ftrdh6oyczqzh745twyyu@jpeg" alt="Author Photo" class="w-20 h-20 rounded-full mr-4 object-cover">
+                <div>
+                    <h5 class="text-lg font-semibold">Danny Morrisey</h5>
+                    <p class="text-gray-600 text-sm">13 / Front End Web Developer / Music Lover</p>
+                </div>
+            </div>
+            <div class="text-gray-700 text-sm">
+              <a href="https://github.com/therealfuntimeswithdanny"><i class="fa-brands fa-github"></i></a> 
+              <a href="https://reddit.com/u/funtimeswithdanny"><i class="fa-brands fa-reddit"></i></a> 
+              <a href="https://danielmorrisey.start.page"><i class="fa-brands fa-buffer"></i></a>
+              <a href="/rss"><i class="fa-solid fa-rss"></i></a>
+              <a hraf="https://steamcommunity.com/id/MadeByDanny"><i class="fa-brands fa-steam"></i></a>
+              <a href="https://discord.com/users/1049123160055894107"><i class="fa-brands fa-discord"></i></a>
+              <a href="https://music.apple.com/us/playlist/my-mix/pl.u-leyl0JPHMvKe68X"><i class="fa-brands fa-apple"></i></a> 
+            </div>
+        </div>
+    </div>
+
+    <!-- Related Posts Section -->
+    <div class="bg-white shadow-lg rounded-lg overflow-hidden mb-8">
+        <div class="p-6">
+            <h4 class="text-xl font-bold mb-4">More Posts</h4>
+            <ul>
+                <li class="mb-4 flex items-center">
+                    <img src="/blog/img/apple-brands-solid.svg" alt="Related Post 1" class="w-16 h-16 object-cover rounded-md mr-4">
+                    <div>
+                        <a href="/wwdc25/index.html" class="text-blue-600 hover:underline font-semibold">WWDC25 is almost here!</a>
+                        <p class="text-gray-600 text-xs">WWDC25 is in 4 Days and I am pumped already. </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
 
 <!-- END GRID -->
 </div><br>
 
-<!-- END w3-content -->
 </div>
 
+<!-- Footer -->
 <footer-blank></footer-blank>
-<!-- Default Statcounter code for Daniel Morrisey
-http://blog.madebydanny.uk -->
+
+<!-- Statcounter Code -->
 <script type="text/javascript">
 var sc_project=13076918; 
 var sc_invisible=1; 
@@ -111,5 +204,88 @@ src="https://c.statcounter.com/13076918/0/cf828171/1/"
 alt="Web Analytics Made Easy - Statcounter"
 referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
 <!-- End of Statcounter Code -->
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const summarizeButton = document.getElementById('summarize-button');
+    const blogContentElement = document.getElementById('blog-content');
+    const summarySection = document.getElementById('summary-section');
+    const summaryContent = document.getElementById('summary-content');
+    const loadingIndicator = document.getElementById('loading-indicator');
+    const clearSummaryButton = document.getElementById('clear-summary-button');
+
+    // Function to show a message in the summary section
+    function showMessage(message, isError = false) {
+      summaryContent.textContent = message;
+      summarySection.classList.remove('hidden');
+      if (isError) {
+        summarySection.classList.remove('border-blue-400', 'bg-blue-50', 'text-blue-800');
+        summarySection.classList.add('border-red-400', 'bg-red-50', 'text-red-800');
+      } else {
+        summarySection.classList.remove('border-red-400', 'bg-red-50', 'text-red-800');
+        summarySection.classList.add('border-blue-400', 'bg-blue-50', 'text-blue-800');
+      }
+    }
+
+    // Event listener for the summarize button
+    summarizeButton.addEventListener('click', async function() {
+      const blogText = blogContentElement.textContent.trim();
+      
+      // Hide previous summary and show loading
+      summarySection.classList.add('hidden');
+      loadingIndicator.classList.remove('hidden');
+      summaryContent.textContent = ''; // Clear previous summary
+
+      if (!blogText) {
+        loadingIndicator.classList.add('hidden');
+        showMessage("No content found to summarize.", true);
+        return;
+      }
+
+      try {
+        // Construct the prompt for the LLM
+        const prompt = `Please summarize the following blog post concisely:\n\n${blogText}`;
+        let chatHistory = [];
+        chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+        const payload = { contents: chatHistory };
+
+        // Make the API call to Gemini
+        const apiKey = "AIzaSyCKDtlpeTjMWz2HA8MhBIE1U534TBqIPB4"; // Canvas will automatically provide the API key at runtime
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+        const response = await fetch(apiUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        const result = await response.json();
+
+        // Check for successful response and extract summary
+        if (result.candidates && result.candidates.length > 0 &&
+            result.candidates[0].content && result.candidates[0].content.parts &&
+            result.candidates[0].content.parts.length > 0) {
+          const summary = result.candidates[0].content.parts[0].text;
+          showMessage(summary);
+        } else {
+          showMessage("Failed to generate summary. Please try again.", true);
+          console.error("Gemini API response structure unexpected:", result);
+        }
+
+      } catch (error) {
+        console.error("Error summarizing content:", error);
+        showMessage("An error occurred while generating the summary. Please try again later.", true);
+      } finally {
+        loadingIndicator.classList.add('hidden'); // Hide loading indicator regardless of success or failure
+      }
+    });
+
+    // Event listener for the clear summary button
+    clearSummaryButton.addEventListener('click', function() {
+      summarySection.classList.add('hidden');
+      summaryContent.textContent = '';
+    });
+  });
+</script>
 </body>
 </html>
